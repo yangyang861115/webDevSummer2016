@@ -1,0 +1,61 @@
+@font-face{
+    font-family:Bariol;
+    src:url(../fonts/Bariol_Regular.otf)
+}
+
+body{
+    margin:0;
+    font-family:Bariol!important;
+
+}
+
+.page-content{
+    -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+img{
+    max-width: 100%;
+}
+.hi{
+    position:relative;
+    background: #333;
+    padding-bottom: 75px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.about_me{
+    /*background:#000;*/
+    color:#aaa;
+    padding-top:20px;
+}
+
+.about_me img{
+    border-radius:100%;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    width:200px;
+}
+
+@media screen and (max-width: 767px) {
+    .about_me{
+        font-size:1.5em;
+        padding: 0;
+    }
+
+    .about_me img{
+        margin-top:60px;
+        width:50%;
+    }
+}
+
+.about_me img:hover{
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+}
+
+#links{
+    background: #f5f4f3;
+    padding-bottom:40px;
+}
