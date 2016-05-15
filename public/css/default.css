@@ -50,11 +50,17 @@ h4 {
     }
 }
 
-.about_me img {
+img.avatar {
     border-radius: 100%;
     -webkit-filter: grayscale(0);
     filter: grayscale(0);
     width: 200px;
+}
+
+img.icon {
+    width:60px;
+    height: 60px;
+    border-radius: 20%;
 }
 
 @media screen and (max-width: 767px) {
@@ -63,10 +69,15 @@ h4 {
         padding: 0;
     }
 
-    .about_me img {
+    .about_me img.avatar {
 
         margin-top: 60px;
         width: 50%;
+    }
+
+    .icon {
+        width:50px;
+        height: 50px;
     }
 }
 
@@ -196,4 +207,8 @@ a:hover {
 table th {
     font-size: 150%;
     font-weight: bold;
+}
+
+#icons {
+    margin-top: 30px;
 }
