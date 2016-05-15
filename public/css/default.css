@@ -16,6 +16,11 @@ body{
 img{
     max-width: 100%;
 }
+h4{
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .hi{
     position:relative;
     background: #333;
@@ -28,16 +33,27 @@ img{
 .about_me{
     /*background:#000;*/
     color:#aaa;
-    padding-top:20px;
+    padding-top:40px;
 }
+
+.about_me .about_me_info{
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .about_me .about_me_info{
+        padding-top:2%;
+        text-align: left;
+    }
+}
+
 
 .about_me img{
     border-radius:100%;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
     width:200px;
 }
-
 @media screen and (max-width: 767px) {
     .about_me{
         font-size:1.5em;
@@ -45,17 +61,87 @@ img{
     }
 
     .about_me img{
+
         margin-top:60px;
         width:50%;
     }
 }
 
 .about_me img:hover{
-    -webkit-filter: grayscale(0);
-    filter: grayscale(0);
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
 }
+
 
 #links{
     background: #f5f4f3;
     padding-bottom:40px;
+}
+
+.project-area{
+    color: #666666;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0px 3px rgba(0,0,0,0.12), 0 0px 2px rgba(0,0,0,0.24);
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    margin:2%;
+}
+
+.project-area:hover {
+    background: #c2c2c2;
+    color: #F58B7D;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.heading {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#links-content {
+    margin-bottom: 40px;
+}
+
+.contact{
+    background: url(../images/bg.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.contact .contact-info{
+    padding: 5%;
+    background: rgba(43,43,43,0.6);
+    color: #fff;
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+
+.contact .contact-info a{
+    color:#F58B7D;
+}
+.contact .contact-info a:hover, .contact .contact-info a:focus{
+    color:#F58B7D;
+}
+
+@media screen and (max-width: 767px) {
+    .contact{
+        min-height: 200px;
+    }
+    .contact .contact-info{
+        background: rgba(43,43,43,0.9);
+        color: #fff;
+    }
+}
+
+#footer {
+    color:#aaa;
+    background-color: #333;
 }
