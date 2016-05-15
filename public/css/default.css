@@ -117,11 +117,11 @@ a:hover{
 }
 
 .contact .contact-info{
-    padding: 5%;
+    padding: 3%;
     background: rgba(43,43,43,0.6);
     color: #fff;
-    margin-top:10px;
-    margin-bottom: 10px;
+    margin-top:3%;
+    margin-bottom: 3%;
 }
 
 .contact .contact-info a{
@@ -144,4 +144,16 @@ a:hover{
 #footer {
     color:#aaa;
     background-color: #333;
+}
+
+.mybtn {
+    background: rgba(43,43,43,0.6);
+    color:#F58B7D;
+    border-radius: 50%;
+
+}
+
+.mybtn:hover {
+    color:#fff;
+    background-color: rgba(43,43,43,0.3);
 }
