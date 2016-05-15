@@ -212,3 +212,9 @@ table th {
 #icons {
     margin-top: 30px;
 }
+
+.skill_title {
+    font-size: larger;
+    color: #F58B7D;
+    font-weight: bold;
+}
