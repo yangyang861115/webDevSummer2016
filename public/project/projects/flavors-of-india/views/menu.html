@@ -1,0 +1,16 @@
+<div id="menu">
+    <div class="row" ng-repeat="rowlist in model.chunkedData">
+        <div class="col-xs-12 col-md-3" ng-repeat="item in rowlist">
+            <div class="zoom">
+                <a href="#/menu/{{item.catname}}" class="thumbnail">
+                    <img class="menuCat" ng-src="./img/menu/{{item.catimg}}" alt="{{item.catname}}">
+                    <div class="caption">
+                        <h3 class="text-center">{{item.catname}}</h3>
+                        <p>{{item.catdesc}} </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+

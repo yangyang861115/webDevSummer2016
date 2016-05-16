@@ -1,0 +1,17 @@
+{
+  "name": "flavors-of-india",
+  "authors": [
+    "Yang Yang",
+    "Satwik Narlanka",
+    "Saumya Pandey"
+  ],
+  "description": "ILS Z532, Information Architecture for the Web final project",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "index.html",
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.3",
+    "angular-route": "^1.5.3"
+  }
+}

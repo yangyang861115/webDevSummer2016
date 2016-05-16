@@ -1,0 +1,31 @@
+<div class="row container">
+    <div class="list-group col-md-4">
+        <a href="#/menu/{{item.catname}}" class="list-group-item" id="submenuside"
+           ng-class="model.checkActive(item.catname)"
+           ng-repeat="item in model.menu">
+            {{item.catname}}
+        </a>
+    </div>
+    <div class="col-md-8">
+        <div class="list-group">
+            <div id="entryItems" class="list-group-item col=xs-12 col-md-6" ng-repeat="entry in model.entries">
+				<div class = "row">
+					<div class = "col-xs-8 col-md-9 text-left">
+						<h4 class="list-group-item-heading">{{entry.subname}}</h4>
+					</div>
+					<div class = "col-xs-4 col-md-3 text-right">
+						<h4 class="list-group-item-heading">${{entry.subprice}}</h4>
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-6 text-left">
+						<img id="submenuimg" class="entry" ng-src="img/menu/{{entry.subimg}}" alt="{{entry.subname}}">
+					</div>
+					<div class = "col-md-6 col-xs-12">
+						<p class="list-group-item-text">{{entry.subdesc}} </p>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>

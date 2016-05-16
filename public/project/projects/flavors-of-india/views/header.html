@@ -1,0 +1,34 @@
+<nav class="navbar navbar-default" data-ng-controller="headerController as model" id="header">
+<div class="pull-left" id="logo"><a href="#/"><img src="img/logo/17.jpg" alt="Flavor of India" height=100%></a></div>
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+		
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+		
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li data-ng-class="{'active': model.$location.url() == '/'}"><a href="#/">Home</a></li>
+                <li data-ng-class="{'active': model.$location.url() == '/menu'}"><a href="#/menu">Our Menu</a></li>
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Order Online <span class="caret"></span></a>
+                    <ul class="dropdown-menu" id="online-link">
+                        <li><a target="_blank" href="https://btownmenus.com">BTownMenus</a></li>
+                        <li><a target="_blank" href="https://www.grubhub.com/?utm_source=bing&utm_medium=cpc&utm_campaign=College%20%7C%20All%20%7C%20Brand&utm_term=grubhub&efkwid=26680366685&ef_id=VxVHHwAAAFMPctBS:20160418204415:s">Grubhub</a></li>
+                        <li><a target="_blank" href="https://www.mrdelivery.com/">Mr.Delivery</a></li>
+                        <li><a target="_blank" href="https://eatstreet.com/?order-source=CAMPUS_SPECIAL_WWW">CampusSpecial</a></li>
+                    </ul>
+                </li>
+                <li data-ng-class="{'active': model.$location.url() == '/reservation'}"><a href="#/reservation">Reservation</a></li>
+                <li data-ng-class="{'active': model.$location.url() == '/contact'}"><a href="#/contact">Contact Us</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>

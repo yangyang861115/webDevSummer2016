@@ -1,0 +1,641 @@
+[
+{
+  "catname":"Appetizers",
+  "catimg":"Veg-Pakora.jpg",
+  "catdesc":"",
+  "catitems": [
+    {
+      "subname":"Vegetable Pakoda",
+      "subimg":"Veg-Pakora.jpg",
+      "subdesc":"Seasoned potatoes and green peas filled in crisp turnovers",
+      "subprice":"3.50"
+    },
+    {
+       "subname":"Samosaa Chaat",
+      "subimg":"samosa-chaat.jpg",
+      "subdesc":" Two samosas topped with Punjabi chickpeas, vegetables, and chutney",
+      "subprice":"6.95"
+    },
+    {
+       "subname":"Chilli Pakoda",
+      "subimg":"chili-pakoda.jpg",
+      "subdesc":" Spicy green chilis dipped in batter and fried",
+      "subprice":"3.95"
+    },
+    {
+       "subname":"Mixed Platter",
+      "subimg":"mixed-chat.jpg",
+      "subdesc":" Samosa, vegetable pakora, and chicken pakora",
+      "subprice":"6.95"
+    },
+     {
+       "subname":"Vegetable Samosa",
+      "subimg":"veg-samosa.jpg",
+      "subdesc":"Seasoned potatoes and green peas filled in crisp turnovers",
+      "subprice":"3.50"
+    },
+  {
+       "subname":"Paneer Pakoda",
+      "subimg":"paneer-pakoda.jpg",
+      "subdesc":"Cubes of homemade cheese, deep fried, served with chutney",
+      "subprice":"5.50"
+    },
+    {
+       "subname":"Chaat Papdi",
+      "subimg":"papdi-chat.jpg",
+      "subdesc":"Spiced potatoes and chickpeas topped with yogurt and tamarind sauce",
+      "subprice":"4.95"
+    },
+     {
+       "subname":"Chicken Pakoda",
+      "subimg":"chicken-pakoda.jpg",
+      "subdesc":"Mildly spiced boneless chicken fritters flavored with fresh onions, garlic and ginger",
+      "subprice":"5.50"
+    }
+    ]
+},
+{
+   "catname":"Breads",
+  "catimg":"bread-naan.jpg",
+  "catdesc":"",
+  "catitems": [
+    {
+      "subname":"Butter Naan",
+      "subimg":"bread-naan.jpg",
+      "subdesc":" Traditional Punjabi white bread",
+      "subprice":"1.95"
+    },
+    {
+       "subname":"Tandoori Roti",
+      "subimg":"tandoori-roti.jpg",
+      "subdesc":"Baked unleavened whole wheat bread",
+      "subprice":"1.95"
+    },
+    {
+       "subname":"Garlic Naan",
+       "subimg":"garlic-naan.jpg",
+      "subdesc":"Naan topped with fresh garlic and herbs",
+      "subprice":"2.50"
+    },
+    {
+       "subname":"Paratha",
+      "subimg":"paratha.jpg",
+      "subdesc":"Multilayered flatbread",
+      "subprice":"2.50"
+    },
+    {
+       "subname":"Aloo Naan",
+      "subimg":"aloo-naan.jpg",
+      "subdesc":" Naan filled with spiced potatoes",
+      "subprice":"2.50"
+    },
+    {
+       "subname":"Onion Paneer Kulcha",
+      "subimg":"onion-paneer-kulcha.jpg",
+      "subdesc":"Naan filled with onions, homemade cheese, and spices",
+      "subprice":"2.95"
+    },
+     {
+       "subname":"Onion Methi Kulcha",
+      "subimg":"onion-methi-kulcha.jpg",
+      "subdesc":"Naan filled with onions and fenugreek",
+      "subprice":"2.95"
+    },
+    {
+       "subname":"Lahori Naan",
+      "subimg":"lahori-naan.jpg",
+      "subdesc":" Naan stuffed with minced chicken, onions, and spices",
+      "subprice":"2.95"
+    }
+    ]
+},
+{
+  "catname":"Soups and Salad",
+  "catimg":"sambhar.jpg",
+  "catdesc":"",
+  "catitems": [
+    {
+      "subname":"Lentil Soup",
+      "subimg":"lentil-soup.jpg",
+      "subdesc":"Puréed lentils with delicate spices",
+      "subprice":"2.50"
+    },
+    {
+       "subname":"Sambhar",
+      "subimg":"sambhar.jpg",
+      "subdesc":"A South-Indian-style lentil and vegetable soup",
+      "subprice":"1.95"
+    },
+    {
+       "subname":"Tomato Soup",
+      "subimg":"tomato-soup.jpg",
+      "subdesc":"Puréed tomatoes and spices",
+      "subprice":"2.50"
+    },
+    {
+       "subname":"Chicken Soup",
+      "subimg":"chicken-soup.jpg",
+      "subdesc":"Delicately spiced chicken soup",
+      "subprice":"3.50"
+    },
+    {
+       "subname":"Cucumber Salad",
+      "subimg":"cucumber-salad.jpg",
+      "subdesc":"Chopped tomatoes, cucumbers, and onions tossed in lemon juice and chaat masala",
+      "subprice":"4.95"
+    },
+    {
+       "subname":"Garden Salad",
+      "subimg":"garden-salad.jpg",
+      "subdesc":"Lettuce, tomato, onion, and cucumber, with lemon juice and chaat masala",
+      "subprice":"4.50"
+    }
+    ]
+},
+{
+  "catname":"Biryani",
+  "catimg":"biryani.jpg",
+  "catdesc":"",
+  "catitems": [
+    {
+      "subname":"Vegetable Biryani",
+      "subimg":"veg-biryani.jpg",
+      "subdesc":"Vegetables cooked with fragrant basmati rice, nuts, and raisins",
+      "subprice":"10.95"
+    },
+    {
+       "subname":"Chicken Biryani",
+      "subimg":"chicken-biryani.jpg",
+      "subdesc":"Basmati rice cooked with boneless chicken, vegetables, nuts, and raisins",
+      "subprice":"11.95"
+    },
+    {
+       "subname":"Lamb Biryani",
+      "subimg":"lamb-biryani.jpg",
+      "subdesc":"Basmati rice cooked with boneless lamb, vegetables, nuts, and raisins",
+      "subprice":"12.95"
+    },
+    {
+       "subname":"Shrimp Biryani",
+      "subimg":"shrimp-biryani.jpg",
+      "subdesc":"Shrimp cooked with rice and spices, garnished with nuts and raisins",
+      "subprice":"13.95"
+    },
+     {
+       "subname":"Mutton Biryani",
+      "subimg":"mutton-biryani.jpg",
+      "subdesc":"Rice cooked with goat, vegetables, nuts, and raisins",
+      "subprice":"12.95"
+    },
+     {
+       "subname":"Shahi Special Biryani",
+      "subimg":"shahi-biryani.jpg",
+      "subdesc":"Lamb, chicken, shrimp, and vegetables cooked with spices and nuts with rice,garnished with raisins",
+      "subprice":"14.95"
+    },
+    {
+       "subname":"Kashmiri Peas Pulao",
+      "subimg":"peas-pulao.jpg",
+      "subdesc":" Fresh green peas cooked with basmati rice, nuts, and raisins",
+      "subprice":"4.95"
+    }
+    ]
+},
+{
+   "catname":"Tandoor",
+  "catimg":"tandoor.jpg",
+  "catdesc":"",
+  "catitems": [
+    {
+      "subname":"Tandoori Chicken",
+      "subimg":"tandoor.jpg",
+      "subdesc":"Chicken legs marinated in yogurt and freshly ground herbs, tenderly barbecued in our clay oven",
+      "subprice":"12.95"
+    },
+    {
+       "subname":"Chicken Tikka",
+      "subimg":"chicken-tikka.jpg",
+      "subdesc":"Succulent cubes of chicken breast,subtly marinated in yogurt and specially blended spices and broiled in the Tandoor",
+      "subprice":"13.95"
+    },
+    {
+       "subname":"Sheesh Kebab",
+      "subimg":"shish-kebab.jpg",
+      "subdesc":" Finely minced lamb seasoned with fresh onions and herbs, cooked on skewers",
+      "subprice":"13.95"
+    },
+     {
+       "subname":"Boti Kebab",
+      "subimg":"boti-kebab.jpg",
+      "subdesc":" Tender morsels of lamb marinated in spices and herbs, and then broiled",
+      "subprice":"13.95"
+    },
+     {
+       "subname":"Tandoori Fish",
+      "subimg":"tandoori-fish.jpg",
+      "subdesc":"Salmon marinated in aromatic herbs and spices, then broiled in the Tandoor",
+      "subprice":"14.95"
+    },
+      {
+       "subname":"Tandoori Shrimp",
+      "subimg":"tandoori-shrimp.jpg",
+      "subdesc":"Subtly seasoned shrimp with spices and green herbs, simmered in our clay oven",
+      "subprice":"14.95"
+    },
+     {
+       "subname":"Tandoori Mixed Grill",
+      "subimg":"mixed-grill.jpg",
+      "subdesc":"An assortment of chicken,lamb and shrimp, individually marinated and roasted",
+      "subprice":"14.95"
+    }
+     
+    ]
+},
+{
+   "catname":"Chicken",
+  "catimg":"chicken-tikka-masala.jpg",
+  "catdesc":"",
+  "catitems": [
+    {
+      "subname":"Chicken Curry",
+      "subimg":"chicken-curry.jpg",
+      "subdesc":"Mildly spiced pieces of chicken cooked in mild spices",
+      "subprice":"11.50"
+    },
+    {
+       "subname":"Chicken Tikka Masala",
+      "subimg":"chicken-tikka-masala.jpg",
+      "subdesc":"Tender pieces of chicken tikka cooked with garlic, ginger, tomatoes and herbs",
+      "subprice":"11.50"
+    },
+    {
+       "subname":"Butter Chicken",
+      "subimg":"Butter-Chicken.jpg",
+      "subdesc":"Tender pieces of chicken tikka cooked in a mild, rich tomato sauce",
+      "subprice":"11.50"
+    },
+     {
+       "subname":"Chicken Vindaloo",
+      "subimg":"Chicken-Vindaloo.jpg",
+      "subdesc":"Chicken cooked in hot spices and vinegar",
+      "subprice":"11.50"
+    },
+     {
+       "subname":"Chicken Korma",
+      "subimg":"chicken-korma.jpg",
+      "subdesc":"Chicken cooked in a yogurt sauce with cashews",
+      "subprice":"11.95"
+    },
+      {
+       "subname":"Chicken Madras",
+      "subimg":"Chicken-Madras.jpg",
+      "subdesc":"Boneless chicken pieces cooked in a coconut sauce",
+      "subprice":"11.95"
+    },
+    {
+       "subname":"Chicken Kadahi",
+      "subimg":"chicken-kadahi.jpg",
+      "subdesc":"Chicken sautéed with onions, green peppers, tomatoes, and spices",
+      "subprice":"11.95"
+    },
+    {
+       "subname":"Chicken Kashmiri",
+      "subimg":"chicken-kashmiri.jpg",
+      "subdesc":"Mildly spiced chicken pieces with cherries, nuts, and raisins",
+      "subprice":"11.95"
+    },
+     {
+       "subname":"Chilli Chicken",
+      "subimg":"chilli-chicken.jpg",
+      "subdesc":"Chicken sautéed with onions and bell peppers with a tangy sauce",
+      "subprice":"11.50"
+    }
+     
+    ]
+},
+ 
+{
+   "catname":"Lamb and Goat",
+  "catimg":"lamb-tikka-masala.jpg",
+  "catdesc":"",
+  "catitems": [
+    {
+      "subname":"Lamb Curry",
+      "subimg":"lamb-curry.jpg",
+      "subdesc":" Tender pieces of lamb cooked in freshly ground spices and sauce",
+      "subprice":"12.95"
+    },
+    {
+       "subname":"Lamb Tikka Masala",
+      "subimg":"lamb-tikka-masala.jpg",
+      "subdesc":"Tender pieces of lamb with garlic, ginger, and herbs",
+      "subprice":"12.95"
+    },
+    {
+       "subname":"Butter Lamb",
+      "subimg":"lamb-and-goat.jpg",
+      "subdesc":"Cubed lamb cooked in a rich and flavorful sauce",
+      "subprice":"12.95"
+    },
+     {
+       "subname":"Lamb Vindaloo",
+      "subimg":"lamb-vindaloo.jpg",
+      "subdesc":"Lamb cooked in a tomato sauce, with vinegar",
+      "subprice":"12.95"
+    },
+     {
+       "subname":"Gosht Bhuna",
+      "subimg":"bhuna-gosht.jpg",
+      "subdesc":"Pieces of lamb cooked with onions, ginger, green peas, and spices",
+      "subprice":"12.95"
+    },
+    {
+       "subname":"Lamb Kadahi",
+      "subimg":"lamb-karahi.jpg",
+      "subdesc":" Lamb sautéed with onions, green peppers, tomatoes, and spices",
+      "subprice":"12.95"
+    },
+     {
+       "subname":"Lamb Korma",
+      "subimg":"lamb-korma.jpg",
+      "subdesc":"Pieces of lamb cooked in a yogurt sauce with cashews",
+      "subprice":"12.95"
+    }
+     
+    ]
+},
+{
+   "catname":"Seafood",
+  "catimg":"shrimp-curry.jpg",
+  "catdesc":"",
+  "catitems": [
+    {
+      "subname":"Shrimp or Fish Curry",
+      "subimg":"shrimp-curry.jpg",
+      "subdesc":"Shrimp or salmon cooked in a mildly spiced sauce",
+      "subprice":"13.95"
+    },
+    {
+       "subname":"Shrimp or Fish Tikka Masala",
+      "subimg":"fish-tikka-masala.jpg",
+      "subdesc":" Shrimp or salmon cooked with spices in a light cream sauce",
+      "subprice":"13.95"
+    },
+    {
+       "subname":"Butter Shrimp or Fish",
+      "subimg":"butterfish.jpg",
+      "subdesc":"Shrimp or salmon cooked in a rich sauce with mild spices",
+      "subprice":"13.95"
+    },
+     {
+       "subname":"Shrimp or Fish Vindaloo",
+      "subimg":"shrimp-vindaloo.jpg",
+      "subdesc":"Shrimp or salmon cooked in tangy tomato and curry sauce with cubed potatoes and fresh spices",
+      "subprice":"13.95"
+    },
+     
+     {
+       "subname":"Shrimp or Fish Saag",
+      "subimg":"fish-saag.jpg",
+      "subdesc":" Shrimp or salmon cookedwith mildly spiced spinach and a touch of cream",
+      "subprice":"13.95"
+    }
+    
+    ]
+},
+{
+  "catname":"Vegetable Specialities",
+  "catimg":"paneer-makhani.jpg",
+  "catdesc":"",
+  "catitems": [
+    {
+      "subname":"Paneer Tikka Masala",
+      "subimg":"paneer.jpg",
+      "subdesc":" Homemade cheese cooked with a flavorful tomato sauce",
+      "subprice":"10.95"
+    },
+     {
+      "subname":"Paneer Makhani",
+      "subimg":"paneer-makhani.jpg",
+      "subdesc":"Cubes of paneer cooked in a mild cream sauce",
+      "subprice":"10.95"
+    },
+     {
+      "subname":"Palak Paneer",
+      "subimg":"palak-paneer.jpg",
+      "subdesc":" Freshly chopped spinach cooked with homemade cheese cubes in a special blend of spices",
+      "subprice":"10.95"
+    },
+     {
+      "subname":"Paneer Kadahi",
+      "subimg":"kadahi-paneer.jpg",
+      "subdesc":" Pieces of cheese sautéed with onions,green peppers, tomatoes, and exotic spices",
+      "subprice":"10.95"
+    },
+    {
+      "subname":"Shahi Paneer",
+      "subimg":"shahi-paneer.jpg",
+      "subdesc":" Pieces of cheese sautéed with onions,green peppers, tomatoes, and exotic spices",
+      "subprice":"10.95"
+    },
+    {
+      "subname":"Matar Paneer",
+      "subimg":"matar-paneer.jpg",
+      "subdesc":"Homemade cheese cooked with fresh tomatoes, onions, spices and creamy gravy",
+      "subprice":"10.95"
+    },
+    {
+       "subname":"Malai Kofta",
+      "subimg":"Malai-Kofta-Recipe.jpg",
+      "subdesc":"Fresh vegetables and cheese croquettes simmered in a mild cream sauce",
+      "subprice":"10.95"
+    },
+     {
+       "subname":"Dal Makhani",
+      "subimg":"dal-makhani.jpg",
+      "subdesc":"Black lentils with aromatic spices in a creamy sauce",
+      "subprice":"10.95"
+    },
+    {
+       "subname":"Dal Tadka",
+      "subimg":"dal-tadka.jpg",
+      "subdesc":"Yellow lentils with blended spices",
+      "subprice":"10.95"
+    },
+    {
+       "subname":"Chilli Paneer",
+      "subimg":"chilli-paneer.jpg",
+      "subdesc":"Cubes of paneer sautéed with onions and bell peppers in a tangy sauce",
+      "subprice":"10.95"
+    },
+    {
+       "subname":"Aloo Vindaloo",
+      "subimg":"aloo-vindaloo.jpg",
+      "subdesc":"Potatoes cooked in a tomato sauce with vinegar",
+      "subprice":"10.95"
+    },
+     {
+       "subname":"Navratan Korma",
+      "subimg":"navratan-korma.jpg",
+      "subdesc":"Nine fresh vegetables with nuts in a mildly spiced, thick yogurt sauce",
+      "subprice":"10.95"
+    },
+     {
+       "subname":"Baigan Bharta",
+      "subimg":"Baingan-Bharta-Recipe.jpg",
+      "subdesc":"Chopped eggplant cooked with tomatoes,onions, green peas, and tasty spices",
+      "subprice":"10.95"
+    },
+    {
+       "subname":"Chana Masala",
+      "subimg":"chana-masala.jpg",
+      "subdesc":"Chickpeas cooked with herbs and spices, Punjabi style",
+      "subprice":"10.95"
+    }
+    ]
+},
+
+{
+   "catname":"Chutneys",
+  "catimg":"mint-chutney.jpg",
+  "catdesc":"",
+  "catitems": [
+    {
+      "subname":"Raita",
+      "subimg":"raita.jpg",
+      "subdesc":"",
+      "subprice":"1.95"
+    },
+    {
+       "subname":"Tamarind Chutney",
+      "subimg":"tamarind-chutney.jpg",
+      "subdesc":"",
+      "subprice":"1.95"
+    },
+    {
+       "subname":"Mint Chutney",
+      "subimg":"mint-chutney.jpg",
+      "subdesc":"",
+      "subprice":"1.95"
+    },
+     {
+       "subname":"Onion Chutney",
+      "subimg":"onion-chutney.jpg",
+      "subdesc":"",
+      "subprice":"1.95"
+    },
+     {
+       "subname":"Coconut Chutney",
+      "subimg":"coconut-chutney.jpg",
+      "subdesc":"",
+      "subprice":"1.95"
+    },
+     {
+       "subname":"Mango Chutney",
+      "subimg":"mango-chutney-recipe.jpg",
+      "subdesc":"",
+      "subprice":"1.95"
+    }
+    
+    ]
+},
+{
+   "catname":"Beverages",
+  "catimg":"drinks.jpg",
+  "catdesc":"",
+  "catitems": [
+    {
+      "subname":"Soft Drinks",
+      "subimg":"soft-drinks.jpg",
+      "subdesc":"",
+      "subprice":"1.95"
+    },
+    {
+       "subname":"Chai",
+      "subimg":"chai.jpg",
+      "subdesc":"",
+      "subprice":"2.15"
+    },
+    {
+       "subname":"Black Tea",
+      "subimg":"black-tea.jpg",
+      "subdesc":"",
+      "subprice":"1.50"
+    },
+     {
+       "subname":"Coffee",
+      "subimg":"coffee.jpg",
+      "subdesc":"",
+      "subprice":"1.50"
+    },
+     {
+       "subname":"Mango Lassi",
+      "subimg":"mango-lassi.jpg",
+      "subdesc":"",
+      "subprice":"2.50"
+    },
+     {
+       "subname":"Mango Milkshake",
+      "subimg":"mango-milkshake.jpg",
+      "subdesc":"",
+      "subprice":"2.50"
+    },
+     {
+       "subname":"Mango Juice",
+      "subimg":"mango-juice.jpg",
+      "subdesc":"",
+      "subprice":"2.00"
+    },
+     {
+       "subname":"Pineapple Juice",
+      "subimg":"pineapple-juice.jpg",
+      "subdesc":"",
+      "subprice":"2.00"
+    },
+     {
+       "subname":"Lassi",
+      "subimg":"lassi.jpg",
+      "subdesc":"",
+      "subprice":"2.50"
+    }
+    
+    ]
+},
+{
+  "catname":"Desserts",
+  "catimg":"dessert.jpg",
+  "catdesc":"",
+  "catitems": [
+    {
+      "subname":"Gulab Jamun",
+      "subimg":"dessert.jpg",
+      "subdesc":"Homemade soft milk balls dipped in honey syrup",
+      "subprice":"3.50"
+    },
+    {
+       "subname":"Ras Malai",
+      "subimg":"ras-malai.jpg",
+      "subdesc":" Homemade cheese pieces dipped in sweetened milk, flavored with pistachios and rose water, served cold",
+      "subprice":"2.95"
+    },
+     {
+       "subname":"Mango or Pistachio Kulfi",
+      "subimg":"kulfi.jpg",
+      "subdesc":"Authentic Indian ice cream enriched with nuts and flavors",
+      "subprice":"2.95"
+    },
+    {
+       "subname":"Carrot Halwa",
+      "subimg":"Carrot_halwa1.jpg",
+      "subdesc":"Shredded carrots cooked with nuts and milk",
+      "subprice":"2.95"
+    },
+    {
+       "subname":"Badam Kheer",
+      "subimg":"kheer.jpg",
+      "subdesc":"Homemade rice pudding flavored with cardamom and blended with almonds and raisins",
+      "subprice":"2.95"
+    }
+    ]
+}
+]
