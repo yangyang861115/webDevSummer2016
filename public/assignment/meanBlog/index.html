@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MeanBlogApp">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <script src="../../js/angular.js"></script>
+    <script src="app.js"></script>
+    <title>MEAN Blog</title>
+</head>
+<body>
+    <div class="container" ng-controller="MeanBlogController">
+        <input ng-model="title" type="text" class="form-control" placeholder="title">
+        <textarea  ng-model="body" rows="5" class="form-control" placeholder="body"></textarea>
+        <button ng-click="createPost(title, body)" class="btn btn-primary btn-block">Add Blog</button>
+
+        <div ng-repeat="post in posts">
+            <h2>{{post.title}} <span ng-click="removePost(post._id)" class="glyphicon glyphicon-remove pull-right"></span></h2>
+            <p>{{post.body}}</p>
+        </div>
+    </div>
+</body>
+</html>

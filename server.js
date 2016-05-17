@@ -8,7 +8,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // configure a public directory to host static content
 app.use(express.static(__dirname + '/public'));
 
-require ("./test/app.js")(app);
+require ("./server/test/app.js")(app); //Add or delete message to test mongodb working
+require ("./server/meanBlog/app.js")(app); //MEAN Blog
+
+
 
 
 var ipaddress = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
