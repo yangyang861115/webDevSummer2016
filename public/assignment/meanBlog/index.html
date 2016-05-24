@@ -8,15 +8,17 @@
     <title>MEAN Blog</title>
 </head>
 <body>
-    <div class="container" ng-controller="MeanBlogController">
+<div class="container" ng-controller="MeanBlogController">
+    <div>
         <input ng-model="title" type="text" class="form-control" placeholder="title">
-        <textarea  ng-model="body" rows="5" class="form-control" placeholder="body"></textarea>
+        <textarea ng-model="body" rows="5" class="form-control" placeholder="body"></textarea>
         <button ng-click="createPost(title, body)" class="btn btn-primary btn-block">Add Blog</button>
-
-        <div ng-repeat="post in posts">
-            <h2>{{post.title}} <span ng-click="removePost(post._id)" class="glyphicon glyphicon-remove pull-right"></span></h2>
-            <p>{{post.body}}</p>
-        </div>
     </div>
+    <div ng-repeat="post in posts">
+        <h2>{{post.title}} <span ng-click="removePost(post._id)" class="glyphicon glyphicon-remove pull-right"></span>
+        </h2>
+        <p>{{post.body}}</p>
+    </div>
+</div>
 </body>
 </html>
