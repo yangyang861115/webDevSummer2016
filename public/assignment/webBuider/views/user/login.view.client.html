@@ -1,7 +1,22 @@
 <div class="container">
+    <div class="alert alert-danger alert-dismissible"
+         role="alert"
+         ng-show="model.error">
+        {{model.error}}
+    </div>
+
     <h1>Login</h1>
-    <input type="text" class="form-control" placeholder="username">
-    <input type="password" class="form-control" placeholder="password">
-    <a href="#/profile" class="btn btn-info btn-block">Login</a>
-    <a href="#/register" class="btn btn-success btn-block">Register</a>
+    <input type="text"
+           class="form-control"
+           placeholder="username"
+           ng-model="username">
+    <input type="password"
+           class="form-control"
+           placeholder="password"
+           ng-model="password">
+
+    <a class="btn btn-info btn-block"
+       ng-click="model.login(username, password)">Login</a>
+    <a href="#/register"
+       class="btn btn-success btn-block">Register</a>
 </div>
