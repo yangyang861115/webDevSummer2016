@@ -21,7 +21,7 @@
             for (var i in users) {
                 if (users[i].username === username && users[i].password === password) {
                     console.log("You are login!");
-                    $location.url("/profile/" + users[i]._id);
+                    $location.url("/user/" + users[i]._id);
                 } else {
                     vm.error = "We're sorry, but you used a username and/or password that doesn't match our records. Please try again";
                 }
@@ -34,7 +34,7 @@
         vm.updateUser = updateUser;
 
         var index = -1;
-        var userId = $routeParams.userId;
+        var userId = $routeParams.uid;
         for (var i in users) {
             if (users[i]._id === userId) {
                 vm.user = users[i];
