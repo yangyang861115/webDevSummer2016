@@ -2,16 +2,16 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <p class="navbar-text pull-left">
-                <a href="website-list.view.client.html" class="navbar-link">
+                <a href="#/user/{{model.uid}}/website" class="navbar-link">
                   <span class="glyphicon glyphicon-chevron-left">
                   </span>
                 </a>
             </p>
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand">
                 Edit Website
             </a>
             <p class="navbar-text pull-right">
-                <a href="website-list.view.client.html" class="navbar-link">
+                <a ng-click="model.updateWebsite(model.website)" class="navbar-link">
                   <span class="glyphicon glyphicon-ok">
                   </span>
                 </a>
@@ -20,31 +20,53 @@
     </div>
 </nav>
 <div class="container">
+    <div class="alert alert-success alert-dismissible"
+         role="alert"
+         ng-if="model.success">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
+        {{model.success}}
+    </div>
+    <div class="alert alert-danger alert-dismissible"
+         role="alert"
+         ng-show="model.alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{model.alert}}
+    </div>
+
     <form>
         <div class="from-group">
             <label for="website-name">Application Name</label>
-            <input type="text" class="form-control" id="website-name" value="Blogger">
+            <input type="text"
+                   class="form-control"
+                   id="website-name"
+                   ng-model="model.website.name">
         </div>
         <div class="from-group">
             <label for="website-description">Application Description</label>
-            <textarea class="form-control" id="website-description" rows="3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet assumenda at beatae cumque distinctio et ex facere
+            <textarea class="form-control"
+                      id="website-description"
+                      rows="3"
+                      ng-model="model.website.description">
             </textarea>
         </div>
     </form>
-    <a href="website-list.view.client.html" class="btn btn-danger btn-block">Delete</a>
+    <a ng-click="model.deleteWebsite()" class="btn btn-danger btn-block">Delete</a>
 </div>
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
         <div class="navbar-header">
             <p class="navbar-text pull-left">
-                <a href="#" class="navbar-link">
+                <a href="" class="navbar-link">
                   <span class=" glyphicon glyphicon-share-alt">
                   </span>
                 </a>
             </p>
 
             <p class="navbar-text pull-right">
-                <a href="../views/user/profile.view.client.html" class="navbar-link">
+                <a href="#/user/{{model.uid}}" class="navbar-link">
                   <span class="glyphicon glyphicon-user">
                   </span>
                 </a>

@@ -1,24 +1,34 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#/profile">
+            <a class="navbar-brand">
                 Profile
             </a>
             <p class="navbar-text pull-right">
                 <a ng-click="model.updateUser(model.user)"class="navbar-link">
-                  <span class="glyphicon glyphicon-ok">
-                  </span>
+                  <span class="glyphicon glyphicon-ok"></span>
                 </a>
             </p>
         </div>
     </div>
 </nav>
 <div class="container">
-    <div class="alert alert-success alert-dismissible" role="alert">
+    <div class="alert alert-success alert-dismissible"
+         role="alert"
+         ng-if="model.success">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
                 aria-hidden="true">&times;</span></button>
-        <strong>Success!</strong> Your profile was saved.
+        {{model.success}}
     </div>
+    <div class="alert alert-danger alert-dismissible"
+         role="alert"
+         ng-show="model.alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{model.alert}}
+    </div>
+
     <form>
         <div class="form-group">
             <label for="username">Username</label>
@@ -53,14 +63,14 @@
                    ng-model="model.user.lastName">
         </div>
     </form>
-    <a href="#/website-list" class="btn btn-info btn-block">Websites</a>
+    <a href="#/user/{{model.userId}}/website" class="btn btn-info btn-block">Websites</a>
     <a href="#/login" class="btn btn-danger btn-block">Logout</a>
 </div>
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
         <div class="navbar-header">
             <p class="navbar-text pull-right">
-                <a href="#/profile" class="navbar-link">
+                <a href="#/user/{{model.userId}}" class="navbar-link">
                   <span class="glyphicon glyphicon-user">
                   </span>
                 </a>

@@ -1,68 +1,28 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand">
                 Websites
             </a>
             <p class="navbar-text pull-right">
-                <a href="website-new.view.client.html" class="navbar-link">
-                  <span class="glyphicon glyphicon-plus">
-                  </span>
+                <a href="#/user/{{model.uid}}/website/new" class="navbar-link">
+                  <span class="glyphicon glyphicon-plus"></span>
                 </a>
             </p>
         </div>
     </div>
 </nav>
 <div class="container">
-    <ul class="list-group">
+    <ul class="list-group" ng-repeat="website in model.websites">
         <li class="list-group-item">
-            <a href="../views/page/page-list.view.client.html">
-                Blogging App
+            <a href="#/user/{{model.uid}}/website/{{website._id}}/page">
+                {{website.name}}
             </a>
             <div class="pull-right">
-                <a href="website-edit.view.client.html">
+                <a href="#/user/{{model.uid}}/website/{{website._id}}">
                     <span class="glyphicon glyphicon-cog"></span>
                 </a>
-                <a href="#">
-                    <span class="glyphicon glyphicon-play"></span>
-                </a>
-            </div>
-        </li>
-        <li class="list-group-item">
-            <a href="../views/page/page-list.view.client.html">
-                Address Book App
-            </a>
-            <div class="pull-right">
-                <a href="website-edit.view.client.html">
-                    <span class="glyphicon glyphicon-cog"></span>
-                </a>
-                <a href="#">
-                    <span class="glyphicon glyphicon-play"></span>
-                </a>
-            </div>
-        </li>
-        <li class="list-group-item">
-            <a href="../views/page/page-list.view.client.html">
-                Script Testing App
-            </a>
-            <div class="pull-right">
-                <a href="website-edit.view.client.html">
-                    <span class="glyphicon glyphicon-cog"></span>
-                </a>
-                <a href="#">
-                    <span class="glyphicon glyphicon-play"></span>
-                </a>
-            </div>
-        </li>
-        <li class="list-group-item">
-            <a href="../views/page/page-list.view.client.html">
-                Blogger
-            </a>
-            <div class="pull-right">
-                <a href="website-edit.view.client.html">
-                    <span class="glyphicon glyphicon-cog"></span>
-                </a>
-                <a href="#">
+                <a>
                     <span class="glyphicon glyphicon-play"></span>
                 </a>
             </div>
@@ -73,7 +33,7 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <p class="navbar-text pull-right">
-                <a href="../views/user/profile.view.client.html" class="navbar-link">
+                <a href="#/user/{{model.uid}}" class="navbar-link">
                   <span class="glyphicon glyphicon-user">
                   </span>
                 </a>

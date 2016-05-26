@@ -2,16 +2,16 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <p class="navbar-text pull-left">
-                <a href="../website/website-list.view.client.html" class="navbar-link">
+                <a href="#/user/{{model.uid}}/website/" class="navbar-link">
                   <span class="glyphicon glyphicon-chevron-left">
                   </span>
                 </a>
             </p>
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand">
                 Pages
             </a>
             <p class="navbar-text pull-right">
-                <a href="page-new.view.client.html" class="navbar-link">
+                <a href="#/user/{{model.uid}}/website/{{model.wid}}/page/new" class="navbar-link">
                   <span class="glyphicon glyphicon-plus">
                   </span>
                 </a>
@@ -20,53 +20,13 @@
     </div>
 </nav>
 <div class="container">
-    <ul class="list-group">
+    <ul class="list-group" ng-repeat="page in model.pages">
         <li class="list-group-item">
-            <a href="../widget/widget-list.view.client.html">
-                Blog Post
+            <a href="#/user/{{model.uid}}/website/{{model.wid}}/page/{{page._id}}/widget">
+                {{page.name}}
             </a>
             <div class="pull-right">
-                <a href="page-edit.view.client.html">
-                    <span class="glyphicon glyphicon-cog"></span>
-                </a>
-            </div>
-        </li>
-        <li class="list-group-item">
-            <a href="../widget/widget-list.view.client.html">
-                Blogs
-            </a>
-            <div class="pull-right">
-                <a href="page-edit.view.client.html">
-                    <span class="glyphicon glyphicon-cog"></span>
-                </a>
-            </div>
-        </li>
-        <li class="list-group-item">
-            <a href="../widget/widget-list.view.client.html">
-                Home
-            </a>
-            <div class="pull-right">
-                <a href="page-edit.view.client.html">
-                    <span class="glyphicon glyphicon-cog"></span>
-                </a>
-            </div>
-        </li>
-        <li class="list-group-item">
-            <a href="../widget/widget-list.view.client.html">
-                About
-            </a>
-            <div class="pull-right">
-                <a href="page-edit.view.client.html">
-                    <span class="glyphicon glyphicon-cog"></span>
-                </a>
-            </div>
-        </li>
-        <li class="list-group-item">
-            <a href="../widget/widget-list.view.client.html">
-                Contact Us
-            </a>
-            <div class="pull-right">
-                <a href="page-edit.view.client.html">
+                <a href="#/user/{{model.uid}}/website/{{model.wid}}/page/{{page._id}}">
                     <span class="glyphicon glyphicon-cog"></span>
                 </a>
             </div>
@@ -77,7 +37,7 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <p class="navbar-text pull-right">
-                <a href="../views/user/profile.view.client.html" class="navbar-link">
+                <a href="#/user/{{model.uid}}" class="navbar-link">
                   <span class="glyphicon glyphicon-user">
                   </span>
                 </a>

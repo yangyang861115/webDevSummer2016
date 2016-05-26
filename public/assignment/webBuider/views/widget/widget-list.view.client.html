@@ -2,16 +2,16 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <p class="navbar-text pull-left">
-                <a href="../views/page/page-list.view.client.html" class="navbar-link">
+                <a href="#/user/{{model.uid}}/website/{{model.wid}}/page" class="navbar-link">
                   <span class="glyphicon glyphicon-chevron-left">
                   </span>
                 </a>
             </p>
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand">
                 Widgets
             </a>
             <p class="navbar-text pull-right">
-                <a href="widget-chooser.view.client.html" class="navbar-link">
+                <a href="#/user/{{model.uid}}/website/{{model.wid}}/page/{{model.pid}}/new" class="navbar-link">
                   <span class="glyphicon glyphicon-plus">
                   </span>
                 </a>
@@ -19,10 +19,10 @@
         </div>
     </div>
 </nav>
-<div class="container">
+<div class="container" ng-repeat="widget in model.widgets">
     <div class="jga-widget">
         <div class="jga-widget-tool">
-            <a href="widget-heading.view.client.html">
+            <a href="widget-heading.html">
                 <span class="glyphicon glyphicon-cog"></span>
             </a>
             <span class="glyphicon glyphicon-align-justify"></span>
@@ -32,7 +32,7 @@
 
     <div class="jga-widget">
         <div class="jga-widget-tool">
-            <a href="widget-heading.view.client.html">
+            <a href="widget-heading.html">
                 <span class="glyphicon glyphicon-cog"></span>
             </a>
             <span class="glyphicon glyphicon-align-justify"></span>
@@ -42,7 +42,7 @@
 
     <div class="jga-widget">
         <div class="jga-widget-tool">
-            <a href="widget-image.view.client.html">
+            <a href="widget-image.html">
                 <span class="glyphicon glyphicon-cog"></span>
             </a>
             <span class="glyphicon glyphicon-align-justify"></span>
@@ -59,36 +59,38 @@
             <span class="glyphicon glyphicon-align-justify"></span>
         </div>
         <p class="first-text">This afternoon, in a scene plucked from one of my work-related anxiety dreams, <em>New
-            York Times</em> reporters Nick Corasaniti, Maggie Haberman, and Thomas Kaplan <a href="https://www.facebook.com/nytimes/videos/10150812214919999/" rel="noopener" target="_blank">pitched
+            York Times</em> reporters Nick Corasaniti, Maggie Haberman, and Thomas Kaplan <a
+                href="https://www.facebook.com/nytimes/videos/10150812214919999/" rel="noopener" target="_blank">pitched
             stories to politics editor Carolyn Ryan on Facebook Live</a> while thousands of people watched it happen.
         </p>
     </div>
 
     <div class="jga-widget">
         <div class="jga-widget-tool">
-            <a href="widget-youtube.view.client.html">
+            <a href="widget-youtube.html">
                 <span class="glyphicon glyphicon-cog"></span>
             </a>
             <span class="glyphicon glyphicon-align-justify"></span>
         </div>
         <iframe width="100%" src="https://www.youtube.com/embed/aD4grQXZPfg" frameborder="0" allowfullscreen></iframe>
     </div>
+
 </div>
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
         <div class="navbar-header">
             <p class="navbar-text pull-left">
-                <a href="#" class="navbar-link">
+                <a href="" class="navbar-link">
                   <span class="glyphicon glyphicon-play">
                   </span>
                 </a>
-                <a href="#" class="navbar-link">
+                <a href="" class="navbar-link">
                   <span class="glyphicon glyphicon-eye-open">
                   </span>
                 </a>
             </p>
             <p class="navbar-text pull-right">
-                <a href="../views/user/profile.view.client.html" class="navbar-link">
+                <a href="#/user/{{model.uid}}" class="navbar-link">
                   <span class="glyphicon glyphicon-user">
                   </span>
                 </a>

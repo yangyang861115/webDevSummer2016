@@ -5,47 +5,55 @@
     angular
         .module("WebAppMaker")
         .controller("LoginController", LoginController)
+        .controller("RegisterController", RegisterController)
         .controller("ProfileController", ProfileController);
 
-    var users = [
-        {_id: "123", username: "alice", password: "alice", firstName: "Alice", lastName: "Wonder"},
-        {_id: "234", username: "bob", password: "bob", firstName: "Bob", lastName: "Marley"},
-        {_id: "345", username: "charly", password: "charly", firstName: "Charly", lastName: "Garcia"},
-        {_id: "456", username: "jannunzi", password: "jannunzi", firstName: "Jose", lastName: "Annunzi"}
-    ];
-
-    function LoginController($location) {
+    function LoginController($location, UserService) {
         var vm = this;
+        vm.login = login;
 
-        vm.login = function (username, password) {
-            for (var i in users) {
-                if (users[i].username === username && users[i].password === password) {
-                    console.log("You are login!");
-                    $location.url("/user/" + users[i]._id);
-                } else {
-                    vm.error = "We're sorry, but you used a username and/or password that doesn't match our records. Please try again";
-                }
+        function login(user) {
+            var user = UserService.findUserByCredentials(user.username, user.password);
+            if(user) {
+                $location.url("/user/" + user._id);
+            } else {
+                vm.alert = "We're sorry, but you used a username and/or password that doesn't match our records. Please try again";
             }
         }
     }
 
-    function ProfileController($routeParams) {
+    function RegisterController($location, UserService) {
         var vm = this;
-        vm.updateUser = updateUser;
+        vm.register = register;
 
-        var index = -1;
-        var userId = $routeParams.uid;
-        for (var i in users) {
-            if (users[i]._id === userId) {
-                vm.user = users[i];
-                index = i;
+        function register(user) {
+            var user = UserService.createUser(user);
+            if(user) {
+                $location.url("/user/" + user._id);
+            } else {
+                vm.alert = "We're sorry, something went wrong in registration. Please try again";
             }
         }
 
-        function updateUser(newUser) {
-            users[i].firstName = newUser.firstName;
-            users[i].lastName = newUser.lastName;
-            users[i].email = newUser.email;
+    }
+
+    function ProfileController($routeParams, UserService) {
+        var vm = this;
+        vm.userId = $routeParams.uid;
+        vm.updateUser = updateUser;
+
+        function init() {
+            vm.user = UserService.findUserById(vm.userId);
+        }
+        init();
+
+        function updateUser(user) {
+            vm.user = UserService.updateUser(vm.userId, user);
+            if (user) {
+                vm.success = "Update successfully!";
+            } else {
+                vm.alert = "We're sorry, something went wrong in updating. Please try again";
+            }
         }
     }
 

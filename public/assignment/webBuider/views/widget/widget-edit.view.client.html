@@ -2,16 +2,16 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <p class="navbar-text pull-left">
-                <a href="#/user/{{model.uid}}/website" class="navbar-link">
+                <a href="#/user/{{model.uid}}/website/{{model.wid}}/page/{{model.pid}}/widget" class="navbar-link">
                   <span class="glyphicon glyphicon-chevron-left">
                   </span>
                 </a>
             </p>
             <a class="navbar-brand">
-                New Website
+                Widget Edit
             </a>
             <p class="navbar-text pull-right">
-                <a ng-click="model.createWebsite(model.website)" class="navbar-link">
+                <a ng-click="model.updateWidget(model.widget)" class="navbar-link">
                   <span class="glyphicon glyphicon-ok">
                   </span>
                 </a>
@@ -36,24 +36,19 @@
         {{model.alert}}
     </div>
 
-    <form>
-        <div class="from-group">
-            <label for="website-name">Name</label>
-            <input type="text"
-                   class="form-control"
-                   id="website-name"
-                   placeholder="Name"
-                   ng-model="model.website.name">
+
+    <div ng-switch="model.widget.widgetType">
+        <div ng-switch-when="HEADING">
+            <ng-include src="'views/widget/widget-heading.view.client.html'">
         </div>
-        <div class="from-group">
-            <label for="website-description">Description</label>
-            <textarea class="form-control"
-                      id="website-description"
-                      rows="3"
-                      placeholder="Description"
-                      ng-model="model.website.description"></textarea>
+        <div ng-switch-when="IMAGE">
+            <ng-include src="'views/widget/image.view.client.html'">
         </div>
-    </form>
+        <div ng-switch-when="YOUTUBE">
+            <ng-include src="'views/widget/widget-youtube.view.client.html'">
+        </div>
+    </div>
+
 </div>
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">

@@ -22,7 +22,7 @@
          */
         var api = {
             createPage: createPage,
-            findPageByWebsiteId: findPageByWebsiteId,
+            findPagesByWebsiteId: findPagesByWebsiteId,
             findPageById: findPageById,
             updatePage: updatePage,
             deletePage: deletePage
@@ -31,7 +31,7 @@
         function createPage(websiteId, page) {
         }
 
-        function findPageByWebsiteId(websiteId) {
+        function findPagesByWebsiteId(websiteId) {
         }
 
         function findPageById(pageId) {
