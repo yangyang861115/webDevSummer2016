@@ -33,18 +33,54 @@
         };
 
         function createWebsite(userId, website) {
+            var newWebsite = {
+                _id: (Math.ceil(Math.random()*100)).toString(),
+                name: website.name,
+                description: website.description,
+                developerId: userId
+            };
+            websites.push(newWebsite);
+            return newWebsite;
         }
 
         function findWebsitesByUser(userId) {
+            var results = [];
+            for(var i in websites) {
+                if(websites[i].developerId === userId) {
+                    results.push(websites[i]);
+                }
+            }
+            return results;
         }
 
         function findWebsiteById(websiteId) {
+            for(var i in websites) {
+                if(websites[i]._id === websiteId) {
+                    return websites[i];
+                }
+            }
+            return null;
         }
 
         function updateWebsite(websiteId, website) {
+            for(var i in websites) {
+                if(websites[i]._id === websiteId) {
+                    websites[i] = website;
+                    return true;
+                }
+            }
+            return false;
         }
 
         function deleteWebsite(websiteId) {
+            for(var i in websites) {
+                if(websites[i]._id === websiteId) {
+                    console.log(i);
+                    websites.splice(i, 1);
+                    return true;
+                }
+            }
+            return false;
         }
 
         return api;

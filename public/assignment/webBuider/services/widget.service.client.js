@@ -7,7 +7,7 @@
         .factory("WidgetService", WidgetService);
 
     function WidgetService() {
-        var vidgets = [
+        var widgets = [
             {"_id": "123", "widgetType": "HEADER", "pageId": "321", "size": 2, "text": "GIZMODO"},
             {"_id": "234", "widgetType": "HEADER", "pageId": "321", "size": 4, "text": "Lorem ipsum"},
             {
@@ -38,19 +38,53 @@
             deleteWidget: deleteWidget
         };
 
-        function createWidget(pageId, widget) {
+        function createWidget(pageId, widgetType) {
+            var newWidget = {
+                _id: (Math.ceil(Math.random()*100)).toString(),
+                widgetType: widgetType,
+                pageId: pageId
+            };
+            widgets.push(newWidget);
+            return newWidget;
         }
 
         function findWidgetsByPageId(pageId) {
+            var results = [];
+            for(var i in widgets) {
+                if(widgets[i].pageId === pageId) {
+                    results.push(widgets[i]);
+                }
+            }
+            return results;
         }
 
         function findWidgetById(widgetId) {
+            for(var i in widgets) {
+                if(widgets[i]._id === widgetId) {
+                    return widgets[i];
+                }
+            }
+            return null;
         }
 
         function updateWidget(widgetId, widget) {
+            for(var i in widgets) {
+                if(widgets[i]._id === widgetId) {
+                    widgets[i] = widget;
+                    return true;
+                }
+            }
+            return false;
         }
 
         function deleteWidget(widgetId) {
+            for(var i in widgets) {
+                if(widgets[i]._id === widgetId) {
+                    widgets.splice(i, 1);
+                    return true;
+                }
+            }
+            return false;
         }
 
         return api;

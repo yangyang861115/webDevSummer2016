@@ -29,18 +29,52 @@
         };
 
         function createPage(websiteId, page) {
+            var newpage = {
+                _id: (Math.ceil(Math.random()*100)).toString(),
+                name: page.name,
+                websiteId: websiteId
+            };
+            pages.push(newpage);
+            return newpage;
         }
 
         function findPagesByWebsiteId(websiteId) {
+            var results = [];
+            for(var i in pages) {
+                if(pages[i].websiteId === websiteId) {
+                    results.push(pages[i]);
+                }
+            }
+            return results;
         }
 
         function findPageById(pageId) {
+            for(var i in pages) {
+                if(pages[i]._id === pageId) {
+                    return pages[i];
+                }
+            }
+            return null;
         }
 
         function updatePage(pageId, page) {
+            for(var i in pages) {
+                if(pages[i]._id === pageId) {
+                    pages[i] = page;
+                    return true;
+                }
+            }
+            return false;
         }
 
         function deletePage(pageId) {
+            for(var i in pages) {
+                if(pages[i]._id === pageId) {
+                    pages.splice(i, 1);
+                    return true;
+                }
+            }
+            return false;
         }
 
         return api;

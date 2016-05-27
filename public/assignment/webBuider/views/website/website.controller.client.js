@@ -13,7 +13,7 @@
         vm.userId = $routeParams.uid;
 
         function init() {
-            vm.websites = WebsiteService.findWebsitesByUser(userId);
+            vm.websites = WebsiteService.findWebsitesByUser(vm.userId);
         }
         init();
 
@@ -24,13 +24,13 @@
         vm.userId = $routeParams.uid;
         vm.createWebsite = createWebsite;
 
-        function createWebsite(website){
-            WebsiteService.createWebsite(vm.userId, website);
+        function createWebsite(){
+            WebsiteService.createWebsite(vm.userId, vm.website);
         }
 
     }
 
-    function EditWebsiteController($routeParams, WebsiteService) {
+    function EditWebsiteController($routeParams, WebsiteService, $location) {
         var vm = this;
         vm.userId = $routeParams.uid;
         vm.websiteId = $routeParams.wid;

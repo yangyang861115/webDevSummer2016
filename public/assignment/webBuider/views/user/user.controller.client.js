@@ -15,7 +15,8 @@
         function login(user) {
             var user = UserService.findUserByCredentials(user.username, user.password);
             if(user) {
-                $location.url("/user/" + user._id);
+                var id = user._id;
+                $location.url("/user/" + id);
             } else {
                 vm.alert = "We're sorry, but you used a username and/or password that doesn't match our records. Please try again";
             }
@@ -25,11 +26,12 @@
     function RegisterController($location, UserService) {
         var vm = this;
         vm.register = register;
+        vm.user = {};
 
-        function register(user) {
-            var user = UserService.createUser(user);
-            if(user) {
-                $location.url("/user/" + user._id);
+        function register() {
+            var newUser = UserService.createUser(vm.user);
+            if(newUser) {
+                $location.url("/user/" + newUser._id);
             } else {
                 vm.alert = "We're sorry, something went wrong in registration. Please try again";
             }
@@ -47,9 +49,10 @@
         }
         init();
 
-        function updateUser(user) {
-            vm.user = UserService.updateUser(vm.userId, user);
-            if (user) {
+        function updateUser() {
+            var user = angular.copy(vm.user);
+            var result = UserService.updateUser(vm.user._id, user);
+            if (result) {
                 vm.success = "Update successfully!";
             } else {
                 vm.alert = "We're sorry, something went wrong in updating. Please try again";

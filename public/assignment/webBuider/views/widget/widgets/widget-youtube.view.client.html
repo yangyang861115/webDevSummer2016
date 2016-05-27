@@ -1,18 +1,19 @@
 <div>
+    <h1>Youtube video</h1>
     <form>
         <div class="form-group">
             <label for="youtube-name">Name</label>
             <input type="text"
                    id="youtube-name"
                    class="form-control"
-                   ng-model="model.widget.youtube.name">
+                   ng-model="model.widget.name">
         </div>
         <div class="form-group">
             <label for="youtube-text">Text</label>
             <input type="text"
                    id="youtube-text"
                    class="form-control"
-                   ng-model="model.widget.youtube.text">
+                   ng-model="model.widget.text">
         </div>
         <div class="form-group">
             <label for="youtube-url">URL</label>
@@ -20,14 +21,14 @@
                    id="youtube-url"
                    class="form-control"
                    placeholder="https://youtu.be/uLWLashCXHE"
-                   ng-model="model.widget.youtube.url">
+                   ng-model="model.widget.url">
         </div>
         <div class="form-group">
             <label for="youtube-width">Width</label>
-            <input type="number"
+            <input type="text"
                    id="youtube-width"
                    class="form-control"
-                   ng-model="model.widget.youtube.width">
+                   ng-model="model.widget.width">
         </div>
     </form>
     <a ng-click="model.deleteWidget()" class="btn btn-danger btn-block">Delete</a>
