@@ -21,7 +21,7 @@
 
     }
 
-    function NewPageController($routeParams, PageService) {
+    function NewPageController($routeParams, PageService, $location) {
         var vm = this;
         vm.userId = $routeParams.uid;
         vm.websiteId = $routeParams.wid;
@@ -31,13 +31,14 @@
             var page = PageService.createPage(vm.websiteId, page);
             if(page) {
                 vm.success = "Page created successfully!";
+                $location.url("/user/"+vm.userId + "/website/"+vm.websiteId + "/page/");
             } else {
                 vm.alert = "Something went wrong in creating a new page.";
             }
         }
     }
 
-    function EditPageController($routeParams, PageService) {
+    function EditPageController($routeParams, PageService, $location) {
         var vm = this;
 
         vm.userId = $routeParams.uid;
@@ -54,10 +55,12 @@
 
         function updatePage(page) {
             PageService.updatePage(vm.pageId, page);
+            $location.url("/user/"+vm.userId + "/website/"+vm.websiteId + "/page/");
         }
 
         function deletePage() {
             PageService.deletePage(vm.pageId);
+            $location.url("/user/"+vm.userId + "/website/"+vm.websiteId + "/page/");
         }
 
     }

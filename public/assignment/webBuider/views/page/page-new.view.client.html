@@ -20,6 +20,21 @@
     </div>
 </nav>
 <div class="container">
+    <div class="alert alert-success alert-dismissible"
+         role="alert"
+         ng-if="model.success">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
+        {{model.success}}
+    </div>
+    <div class="alert alert-danger alert-dismissible"
+         role="alert"
+         ng-show="model.alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{model.alert}}
+    </div>
     <form>
         <div class="form-group">
             <label for="page-name">Name</label>
