@@ -13,13 +13,19 @@
         vm.login = login;
 
         function login(user) {
-            var user = UserService.findUserByCredentials(user.username, user.password);
-            if(user) {
-                var id = user._id;
-                $location.url("/user/" + id);
-            } else {
-                vm.alert = "We're sorry, but you used a username and/or password that doesn't match our records. Please try again";
-            }
+            UserService
+                .findUserByCredentials(user.username, user.password)
+                .then(
+                    function (response) {
+                        var user = response.data;
+                        if (user) {
+                            var id = user._id;
+                            $location.url("/user/" + id);
+                        }
+                    }, function (error) {
+                        console.log(error.data);
+                        vm.alert = "We're sorry, but you used a username and/or password that doesn't match our records. Please try again";
+                    });
         }
     }
 
@@ -29,12 +35,20 @@
         vm.user = {};
 
         function register() {
-            var newUser = UserService.createUser(vm.user);
-            if(newUser) {
-                $location.url("/user/" + newUser._id);
-            } else {
-                vm.alert = "We're sorry, something went wrong in registration. Please try again";
-            }
+            UserService
+                .createUser(vm.user)
+                .then(
+                    function (response) {
+                        var newUser = response.data;
+                        if (newUser) {
+                            $location.url("/user/" + newUser._id);
+                        }
+                    },
+                    function (error) {
+                        console.log(error.data);
+                        vm.alert = "We're sorry, something went wrong in registration. Please try again";
+                    }
+                );
         }
 
     }
@@ -45,18 +59,33 @@
         vm.updateUser = updateUser;
 
         function init() {
-            vm.user = UserService.findUserById(vm.userId);
+            UserService
+                .findUserById(vm.userId)
+                .then(
+                    function (response) {
+                        vm.user = response.data;
+                    },
+                    function (error) {
+                        console.log(error.data);
+                    }
+                );
         }
+
         init();
 
         function updateUser() {
-            var user = angular.copy(vm.user);
-            var result = UserService.updateUser(vm.user._id, user);
-            if (result) {
-                vm.success = "Update successfully!";
-            } else {
-                vm.alert = "We're sorry, something went wrong in updating. Please try again";
-            }
+
+            UserService
+                .updateUser(vm.user._id, vm.user)
+                .then(
+                    function (response) {
+                        vm.success = "Update successfully!";
+                    },
+                    function (error) {
+                        console.log(error.data);
+                        vm.alert = "We're sorry, something went wrong in updating. Please try again";
+                    }
+                );
         }
     }
 

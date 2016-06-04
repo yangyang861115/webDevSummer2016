@@ -10,7 +10,7 @@ app.use(express.static(__dirname + '/public'));
 
 require ("./server/test/app.js")(app); //Add or delete message to test mongodb working
 require ("./server/meanBlog/app.js")(app); //MEAN Blog
-
+require ("./server/webBuilder/app.js")(app); //WebBuilder Blog
 
 
 
