@@ -8,10 +8,10 @@
 
     function FlickrImageSearchController($routeParams, $location, FlickrService, WidgetService) {
         var vm = this;
-        var userId = $routeParams.uid;
-        var websiteId = $routeParams.wid;
-        var pageId = $routeParams.pid ;
-        var widgetId = $routeParams.wgid;
+        vm.userId = $routeParams.uid;
+        vm.websiteId = $routeParams.wid;
+        vm.pageId = $routeParams.pid ;
+        vm.widgetId = $routeParams.wgid;
         vm.searchPhotos = searchPhotos;
         vm.selectPhoto = selectPhoto;
 
@@ -31,15 +31,15 @@
             var url = "https://farm" + photo.farm + ".staticflickr.com/" + photo.server;
             url += "/" + photo.id + "_" + photo.secret + "_b.jpg";
             WidgetService
-                .findWidgetById(widgetId)
+                .findWidgetById(vm.widgetId)
                 .then(function(response) {
                     var widget = response.data;
                     widget.url = url;
                     WidgetService
-                        .updateWidget(widgetId, widget)
+                        .updateWidget(vm.widgetId, widget)
                         .then(
                             function (response){
-                                $location.url("/user/" + userId + "/website/" + websiteId + "/page/" + pageId + "/widget/" + widgetId);
+                                $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget/" + vm.widgetId);
                             }
                         );
                 });

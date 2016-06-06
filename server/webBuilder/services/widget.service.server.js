@@ -19,17 +19,22 @@ var widgets = [
 
 
 module.exports = function (app) {
+    var multer = require('multer'); // npm install multer --save
+    var upload = multer({dest: __dirname + '/../../../public/assignment/webBuilder/uploads'});
+
+
     app.post('/api/webbuilder/page/:pageId/widget', createWidget);
     app.get('/api/webbuilder/page/:pageId/widget', findAllWidgetsForPage);
     app.get('/api/webbuilder/widget/:widgetId', findWidgetById);
     app.put('/api/webbuilder/widget/:widgetId', updateWidget);
     app.put('/api/webbuilder/page/:pageId/widget', sortWidgets);
     app.delete('/api/webbuilder/widget/:widgetId', deleteWidget);
+    app.post("/api/webbuilder/upload", upload.single('myFile'), uploadImage);
 
     function createWidget(req, res) {
         var pageId = req.params.pageId;
         var widget = req.body;
-        widget._id = (new Date()).getTime()+"";
+        widget._id = (new Date()).getTime() + "";
         widget.pageId = pageId;
         widgets.push(widget);
         res.json(widget);
@@ -38,8 +43,8 @@ module.exports = function (app) {
     function findAllWidgetsForPage(req, res) {
         var pageId = req.params.pageId;
         var results = [];
-        for(var i in widgets) {
-            if(widgets[i].pageId === pageId) {
+        for (var i in widgets) {
+            if (widgets[i].pageId === pageId) {
                 results.push(widgets[i]);
             }
         }
@@ -48,8 +53,8 @@ module.exports = function (app) {
 
     function findWidgetById(req, res) {
         var widgetId = req.params.widgetId;
-        for(var i in widgets) {
-            if(widgets[i]._id === widgetId) {
+        for (var i in widgets) {
+            if (widgets[i]._id === widgetId) {
                 res.json(widgets[i]);
                 return;
             }
@@ -60,8 +65,8 @@ module.exports = function (app) {
     function updateWidget(req, res) {
         var widgetId = req.params.widgetId;
         var widget = req.body;
-        for(var i in widgets) {
-            if(widgets[i]._id === widgetId) {
+        for (var i in widgets) {
+            if (widgets[i]._id === widgetId) {
                 widgets[i] = widget;
                 res.sendStatus(200);
                 return;
@@ -75,7 +80,7 @@ module.exports = function (app) {
         var pageId = req.params.pageId;
         var id1 = req.query['initial'];
         var id2 = req.query['final'];
-        if(id1 && id2) {
+        if (id1 && id2) {
             res.sendStatus(200);
             return;
         }
@@ -84,8 +89,8 @@ module.exports = function (app) {
 
     function deleteWidget(req, res) {
         var widgetId = req.params.widgetId;
-        for(var i in widgets) {
-            if(widgets[i]._id === widgetId) {
+        for (var i in widgets) {
+            if (widgets[i]._id === widgetId) {
                 widgets.splice(i, 1);
                 res.sendStatus(200);
                 return;
@@ -93,4 +98,29 @@ module.exports = function (app) {
         }
         res.status(400).send("Unable to delete widget with id " + widgetId);
     }
+
+    function uploadImage(req, res) {
+        var widgetId = req.body.widgetId;
+        var userId = req.body.userId;
+        var websiteId = req.body.websiteId;
+        var pageId = req.body.pageId;
+        var width = req.body.width;
+        var myFile = req.file;
+
+        var originalname = myFile.originalname; // file name on user's computer
+        var filename = myFile.filename;     // new file name in upload folder
+        var path = myFile.path;         // full path of uploaded file
+        var destination = myFile.destination;  // folder where file is saved to
+        var size = myFile.size;
+        var mimetype = myFile.mimetype;
+
+        for (var i in widgets) {
+            if (widgets[i]._id === widgetId) {
+                widgets[i].url = "/assignment/webBuilder/uploads/" + filename;
+                widgets[i].width = width;
+            }
+        }
+        res.redirect("/assignment/webBuilder/#/user/" + userId + "/website/" + websiteId + "/page/" + pageId + "/widget/" + widgetId);
+    }
+
 };
