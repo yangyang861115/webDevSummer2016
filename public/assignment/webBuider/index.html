@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/style.css">
     <title>MEAN Web Builder</title>
 
+    <script   src="http://code.jquery.com/jquery-1.12.4.js"   integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="   crossorigin="anonymous"></script>
+    <script   src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"   integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="   crossorigin="anonymous"></script>
     <script src="../../js/angular.js"></script>
     <script src="../../js/angular-route.min.js"></script>
     <script src="app.js"></script>
@@ -18,14 +20,18 @@
     <script src="views/website/website.controller.client.js"></script>
     <script src="views/page/page.controller.client.js"></script>
     <script src="views/widget/widget.controller.client.js"></script>
+    <script src="views/widget/widget-flickr-search.controller.client.js"></script>
     <!--services-->
     <script src="services/user.service.client.js"></script>
     <script src="services/website.service.client.js"></script>
     <script src="services/page.service.client.js"></script>
     <script src="services/widget.service.client.js"></script>
+    <script src="services/flickr.service.client.js"></script>
+    <!--directives-->
+    <script src="directives/jga-directives.js"></script>
 
 </head>
 <body>
-    <div ng-view></div>
+<div ng-view></div>
 </body>
 </html>

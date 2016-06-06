@@ -61,7 +61,7 @@
             })
             //widget
             .when("/user/:uid/website/:wid/page/:pid/widget", {
-                templateUrl: "views/widget/widgets/widget-list.view.client.html",
+                templateUrl: "views/widget/widget-list.view.client.html",
                 controller: "WidgetListController",
                 controllerAs: "model"
             })
@@ -73,6 +73,11 @@
             .when("/user/:uid/website/:wid/page/:pid/widget/:wgid", {
                 templateUrl: "views/widget/widget-edit.view.client.html",
                 controller: "EditWidgetController",
+                controllerAs: "model"
+            })
+            .when("/user/:uid/website/:wid/page/:pid/widget/:wgid/flickr", {
+                templateUrl: "views/widget/widget-flickr-search.view.client.html",
+                controller: "FlickrImageSearchController",
                 controllerAs: "model"
             })
             .otherwise({

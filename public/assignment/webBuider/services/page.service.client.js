@@ -6,13 +6,7 @@
         .module("WebAppMaker")
         .factory("PageService", PageService);
 
-    function PageService() {
-        var pages = [
-            {"_id": "321", "name": "Post 1", "websiteId": "456"},
-            {"_id": "432", "name": "Post 2", "websiteId": "456"},
-            {"_id": "543", "name": "Post 3", "websiteId": "456"}
-        ];
-
+    function PageService($http) {
         /*
          * createPage(websiteId, page) - adds the page parameter instance to the local pages array. The new page's websiteId is set to the websiteId parameter
          * findPageByWebsiteId(websiteId) - retrieves the pages in local pages array whose websiteId matches the parameter websiteId
@@ -29,52 +23,23 @@
         };
 
         function createPage(websiteId, page) {
-            var newpage = {
-                _id: (Math.ceil(Math.random()*100)).toString(),
-                name: page.name,
-                websiteId: websiteId
-            };
-            pages.push(newpage);
-            return newpage;
+            return $http.post("/api/webbuilder/website/" + websiteId + "/page", page);
         }
 
         function findPagesByWebsiteId(websiteId) {
-            var results = [];
-            for(var i in pages) {
-                if(pages[i].websiteId === websiteId) {
-                    results.push(pages[i]);
-                }
-            }
-            return results;
+            return $http.get("/api/webbuilder/website/" + websiteId + "/page");
         }
 
         function findPageById(pageId) {
-            for(var i in pages) {
-                if(pages[i]._id === pageId) {
-                    return pages[i];
-                }
-            }
-            return null;
+            return $http.get("/api/webbuilder/page/" + pageId);
         }
 
         function updatePage(pageId, page) {
-            for(var i in pages) {
-                if(pages[i]._id === pageId) {
-                    pages[i] = page;
-                    return true;
-                }
-            }
-            return false;
+            return $http.put("/api/webbuilder/page/" + pageId, page);
         }
 
         function deletePage(pageId) {
-            for(var i in pages) {
-                if(pages[i]._id === pageId) {
-                    pages.splice(i, 1);
-                    return true;
-                }
-            }
-            return false;
+            return $http.delete("/api/webbuilder/page/" + pageId);
         }
 
         return api;

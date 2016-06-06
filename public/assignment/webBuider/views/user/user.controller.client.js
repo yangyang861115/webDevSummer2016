@@ -53,10 +53,11 @@
 
     }
 
-    function ProfileController($routeParams, UserService) {
+    function ProfileController($routeParams,$location, UserService) {
         var vm = this;
         vm.userId = $routeParams.uid;
         vm.updateUser = updateUser;
+        vm.deleteUser = deleteUser;
 
         function init() {
             UserService
@@ -86,6 +87,19 @@
                         vm.alert = "We're sorry, something went wrong in updating. Please try again";
                     }
                 );
+        }
+
+        function deleteUser() {
+            UserService
+                .deleteUser(vm.user._id)
+                .then(
+                    function(response) {
+                        $location.url("/login");
+                    },
+                    function(error) {
+                        vm.error = error.data;
+                    }
+                )
         }
     }
 

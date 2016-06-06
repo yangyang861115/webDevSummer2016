@@ -19,8 +19,8 @@
         </div>
     </div>
 </nav>
-<div class="container" >
-    <div class="jga-widget" ng-repeat="widget in model.widgets">
+<div class="container widget-container">
+    <div class="jga-widget" ng-repeat="widget in model.widgets" jga-widget>
         <div class="jga-widget-tool">
             <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}">
                 <span class="glyphicon glyphicon-cog"></span>

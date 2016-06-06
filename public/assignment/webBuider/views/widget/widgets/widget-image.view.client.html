@@ -31,14 +31,14 @@
                    placeholder="100%"
                    ng-model="model.widget.width">
         </div>
-        <div class="form-group">
-            <label for="image-local">Upload</label>
-            <input type="file"
-                   id="image-local"
-                   class="form-control"
-                   ng-model="model.widget.file">
-        </div>
     </form>
-    <a href="#" class="btn btn-info btn-block">Upload Image</a>
+
+    <form action="/api/webbuilder/upload"  method="post" enctype="multipart/form-data">
+        <input  name="myFile"   type="file" class="form-control"/>
+        <input  name="width"    value="{{model.widget.width}}" style="display: none"/>
+        <input  name="widgetId" value="{{model.widget._id}}"   style="display: none"/>
+        <button type="submit"   class="btn btn-block btn-primary">Upload Image</button>
+    </form>
+
     <a ng-click="model.deleteWidget()"  class="btn btn-danger btn-block">Delete</a>
 </div>

@@ -6,15 +6,7 @@
         .module("WebAppMaker")
         .factory("WebsiteService", WebsiteService);
 
-    function WebsiteService() {
-        var websites = [
-            {"_id": "123", "name": "Facebook", "developerId": "456"},
-            {"_id": "234", "name": "Tweeter", "developerId": "456"},
-            {"_id": "456", "name": "Gizmodo", "developerId": "456"},
-            {"_id": "567", "name": "Tic Tac Toe", "developerId": "123"},
-            {"_id": "678", "name": "Checkers", "developerId": "123"},
-            {"_id": "789", "name": "Chess", "developerId": "234"}
-        ];
+    function WebsiteService($http) {
 
         /*
         * createWebsite(userId, website) - adds the website parameter instance to the local websites array. The new website's developerId is set to the userId parameter
@@ -33,54 +25,23 @@
         };
 
         function createWebsite(userId, website) {
-            var newWebsite = {
-                _id: (Math.ceil(Math.random()*100)).toString(),
-                name: website.name,
-                description: website.description,
-                developerId: userId
-            };
-            websites.push(newWebsite);
-            return newWebsite;
+            return $http.post("/api/webbuilder/user/" + userId + "/website", website);
         }
 
         function findWebsitesByUser(userId) {
-            var results = [];
-            for(var i in websites) {
-                if(websites[i].developerId === userId) {
-                    results.push(websites[i]);
-                }
-            }
-            return results;
+            return $http.get("/api/webbuilder/user/" + userId+ "/website");
         }
 
         function findWebsiteById(websiteId) {
-            for(var i in websites) {
-                if(websites[i]._id === websiteId) {
-                    return websites[i];
-                }
-            }
-            return null;
+            return $http.get("/api/webbuilder/website/" + websiteId);
         }
 
         function updateWebsite(websiteId, website) {
-            for(var i in websites) {
-                if(websites[i]._id === websiteId) {
-                    websites[i] = website;
-                    return true;
-                }
-            }
-            return false;
+            return $http.put("/api/webbuilder/website/" + websiteId, website);
         }
 
         function deleteWebsite(websiteId) {
-            for(var i in websites) {
-                if(websites[i]._id === websiteId) {
-                    console.log(i);
-                    websites.splice(i, 1);
-                    return true;
-                }
-            }
-            return false;
+            return $http.delete("/api/webbuilder/website/" + websiteId);
         }
 
         return api;
