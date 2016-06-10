@@ -8,8 +8,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // configure a public directory to host static content
 app.use(express.static(__dirname + '/public'));
 
-require ("./server/test/app.js")(app); //Add or delete message to test mongodb working
-require ("./server/meanBlog/app.js")(app); //MEAN Blog
+//require ("./server/test/app.js")(app); //Add or delete message to test mongodb working
+//require ("./server/meanBlog/app.js")(app); //MEAN Blog
 require ("./server/webBuilder/app.js")(app); //WebBuilder Blog
 
 
