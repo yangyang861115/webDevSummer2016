@@ -6,8 +6,8 @@ module.exports = function(){
     mongoose.connect('mongodb://127.0.0.1:27017/webBuilder');
 
     var models = {
-        UserModel: require('./user/user.model.server.js')()
-        //WebsiteModel: require('./website.model.server.js')(),
+        UserModel: require('./user/user.model.server.js')(),
+        WebsiteModel: require('./website/website.model.server.js')()
         //PageModel: require('./page.model.server.js')(),
         //WidgetModel: require('./widget.model.server.js')()
     };
