@@ -55,7 +55,7 @@
         vm.widget = {};
         function selectWidget(widgetType) {
             var widget = {
-                widgetType: widgetType
+                type: widgetType
             };
             WidgetService
                 .createWidget(vm.pageId, widget)

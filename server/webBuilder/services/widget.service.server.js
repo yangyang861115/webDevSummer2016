@@ -18,10 +18,11 @@ var widgets = [
 ];
 
 
-module.exports = function (app) {
+module.exports = function (app, modules) {
     var multer = require('multer'); // npm install multer --save
     var upload = multer({dest: __dirname + '/../../../public/assignment/webBuilder/uploads'});
 
+    var WidgetModel = modules.WidgetModel;
 
     app.post('/api/webbuilder/page/:pageId/widget', createWidget);
     app.get('/api/webbuilder/page/:pageId/widget', findAllWidgetsForPage);
@@ -34,45 +35,68 @@ module.exports = function (app) {
     function createWidget(req, res) {
         var pageId = req.params.pageId;
         var widget = req.body;
-        widget._id = (new Date()).getTime() + "";
-        widget.pageId = pageId;
-        widgets.push(widget);
-        res.json(widget);
+        WidgetModel.createWidget(pageId, widget)
+            .then(
+                function(widget) {
+                    res.json(widget);
+                },
+                function(error){
+                    res.statusCode(400).send(error);
+                }
+            );
     }
 
     function findAllWidgetsForPage(req, res) {
         var pageId = req.params.pageId;
-        var results = [];
-        for (var i in widgets) {
-            if (widgets[i].pageId === pageId) {
-                results.push(widgets[i]);
-            }
-        }
-        res.json(results);
+        WidgetModel.findAllWidgetsForPage(pageId)
+            .then(
+                function(widgets) {
+                    res.json(widgets);
+                },
+                function(error){
+                    res.statusCode(404).send(error);
+                }
+            );
     }
 
     function findWidgetById(req, res) {
         var widgetId = req.params.widgetId;
-        for (var i in widgets) {
-            if (widgets[i]._id === widgetId) {
-                res.json(widgets[i]);
-                return;
-            }
-        }
-        res.status(400).send("Unable to find widget with id " + widgetId);
+        WidgetModel.findWidgetById(widgetId)
+            .then(
+                function(widget) {
+                    res.json(widget);
+                },
+                function(error){
+                    res.statusCode(404).send(error);
+                }
+            );
     }
 
     function updateWidget(req, res) {
         var widgetId = req.params.widgetId;
         var widget = req.body;
-        for (var i in widgets) {
-            if (widgets[i]._id === widgetId) {
-                widgets[i] = widget;
-                res.sendStatus(200);
-                return;
-            }
-        }
-        res.status(400).send("Unable to update widget with id " + widgetId);
+        WidgetModel.updateWidget(widgetId, widget)
+            .then(
+                function(stats) {
+                    res.send(stats);
+                },
+                function(error){
+                    res.statusCode(400).send(error);
+                }
+            );
+    }
+
+    function deleteWidget(req, res) {
+        var widgetId = req.params.widgetId;
+        WidgetModel.deleteWidget(widgetId)
+            .then(
+                function(stats) {
+                    res.send(stats);
+                },
+                function(error){
+                    res.statusCode(400).send(error);
+                }
+            );
     }
 
     function sortWidgets(req, res) {
@@ -87,17 +111,6 @@ module.exports = function (app) {
         res.status(400).send("Unable to sort");
     }
 
-    function deleteWidget(req, res) {
-        var widgetId = req.params.widgetId;
-        for (var i in widgets) {
-            if (widgets[i]._id === widgetId) {
-                widgets.splice(i, 1);
-                res.sendStatus(200);
-                return;
-            }
-        }
-        res.status(400).send("Unable to delete widget with id " + widgetId);
-    }
 
     function uploadImage(req, res) {
         var widgetId = req.body.widgetId;

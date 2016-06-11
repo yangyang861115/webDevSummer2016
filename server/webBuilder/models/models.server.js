@@ -7,9 +7,9 @@ module.exports = function(){
 
     var models = {
         UserModel: require('./user/user.model.server.js')(),
-        WebsiteModel: require('./website/website.model.server.js')()
-        //PageModel: require('./page.model.server.js')(),
-        //WidgetModel: require('./widget.model.server.js')()
+        WebsiteModel: require('./website/website.model.server.js')(),
+        PageModel: require('./page/page.model.server.js')(),
+        WidgetModel: require('./widget/widget.model.server.js')()
     };
     return models;
 };

@@ -10,7 +10,9 @@ module.exports = function(){
         firstName: String,
         lastName: String,
         email: String,
+        phone: String,
         dob: Date,
+        //websites: {type: }
         dateCreated: {type: Date, default: Date.now}
     }, {collection: "user"});
 
