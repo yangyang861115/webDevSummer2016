@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="TodoApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <style>
+        th {
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+<body >
+<div class="container" ng-controller="TodoController as model">
+    <h1>Todo App</h1>
+    {{model.data}}
+    <todos data="model.data" callback="model.reorderTodos(start, end)"></todos>
+</div>
+
+
+<script src="http://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+        crossorigin="anonymous"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"
+        integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw=" crossorigin="anonymous"></script>
+<script src="../../js/angular.js"></script>
+<script src="app.js"></script>
+<script src="todos.js"></script>
+</body>
+</html>

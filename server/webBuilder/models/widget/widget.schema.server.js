@@ -22,7 +22,7 @@ module.exports = function () {
             formatted: Boolean,
             dateCreated: {type: Date, default: Date.now}
         },
-        {collection: "widget"});
+        {collection: "webbuilder.widget"});
 
     return WidgetSchema;
 };

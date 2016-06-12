@@ -14,7 +14,7 @@ module.exports = function(){
         dob: Date,
         //websites: {type: }
         dateCreated: {type: Date, default: Date.now}
-    }, {collection: "user"});
+    }, {collection: "webbuilder.user"});
 
     return UserSchema;
 };

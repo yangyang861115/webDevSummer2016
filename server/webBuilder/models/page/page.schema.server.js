@@ -10,7 +10,7 @@ module.exports = function(){
         description: String,
         //widgets: [widget]
         dateCreated: {type: Date, default: Date.now},
-    }, {collection: "page"});
+    }, {collection: "webbuilder.page"});
 
     return PageSchema;
 };

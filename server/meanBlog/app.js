@@ -4,23 +4,23 @@ module.exports = function(app)
     app.post("/api/meanblog/post", createPost);
     app.delete("/api/meanblog/post/:id", removePost);
 
-    var connectionString = 'mongodb://127.0.0.1:27017/meanblogs';
-
-    if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD) {
-        connectionString = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
-            process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
-            process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
-            process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
-            process.env.OPENSHIFT_APP_NAME;
-    }
+    //var connectionString = 'mongodb://127.0.0.1:27017/meanblogs';
+    //
+    //if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD) {
+    //    connectionString = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
+    //        process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
+    //        process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
+    //        process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
+    //        process.env.OPENSHIFT_APP_NAME;
+    //}
 
     var mongoose = require("mongoose");
-    mongoose.createConnection(connectionString);
+    //mongoose.createConnection(connectionString);
 
     var PostSchema = mongoose.Schema({
         title: String,
         body: String
-    });
+    }, {collection: "meanblog"});
 
     var PostModel = mongoose.model("PostModel", PostSchema);
     var posts = [];

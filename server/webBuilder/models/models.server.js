@@ -3,7 +3,7 @@
  */
 module.exports = function(){
     var mongoose = require('mongoose');
-    mongoose.connect('mongodb://127.0.0.1:27017/webBuilder');
+    //mongoose.connect('mongodb://127.0.0.1:27017/webBuilder');
 
     var models = {
         UserModel: require('./user/user.model.server.js')(),
