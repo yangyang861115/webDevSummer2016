@@ -81,7 +81,7 @@
         init();
 
         function updateWebsite(website) {
-            if (website && website.name) {
+            //if (website && website.name) {
                 WebsiteService
                     .updateWebsite(vm.websiteId, website)
                     .then(
@@ -92,7 +92,7 @@
                             vm.alert = error.data;
                         }
                     );
-            }
+            //}
         }
 
         function deleteWebsite() {
