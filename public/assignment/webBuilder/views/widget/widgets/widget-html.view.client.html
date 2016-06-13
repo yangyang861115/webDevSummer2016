@@ -1,0 +1,19 @@
+<h1>HTML</h1>
+<form name="widgetNewForm" novalidate class="css-form">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name"
+               id="name"
+               class="form-control"
+               ng-model="model.widget.name" required>
+    </div>
+    <div ng-show="widgetNewForm.name.$touched">
+        <div class="errormsg" ng-show="widgetNewForm.name.$error.required">Name is required</div>
+    </div>
+    <div ng-model="model.widget.text"
+         text-angular
+         ta-toolbar="[['h1','h2','h3', 'h4', 'h5', 'h6'],['bold','italics','underline','strikeThrough'],
+        ['ul','ol'],['justifyLeft','justifyCenter','justifyRight','justifyFull'], ['indent','outdent'],['html']]">
+    </div>
+    <a ng-click="model.deleteWidget()" class="btn btn-danger btn-block">Delete</a>
+</form>

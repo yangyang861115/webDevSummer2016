@@ -3,5 +3,5 @@
  */
 (function(){
     angular
-        .module("WebAppMaker", ["ngRoute", "jagDirective"]);
+        .module("WebAppMaker", ["ngRoute", "wamDirective","textAngular", "ui.validate"]);
 })();

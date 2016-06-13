@@ -1,5 +1,5 @@
 <div>
-    <h1>Link</h1>
+    <h1>Header</h1>
     <form name="widgetNewForm" novalidate class="css-form">
         <div class="form-group">
             <label for="name">Name</label>
@@ -13,29 +13,18 @@
         </div>
         <div class="form-group">
             <label for="text">Text</label>
-            <input type="text" name="text"
+            <input type="text"
                    id="text"
                    class="form-control"
                    ng-model="model.widget.text">
         </div>
         <div class="form-group">
-            <label for="url">URL</label>
-            <input type="url"
-                   id="url"
+            <label for="size">Size</label>
+            <input type="number"
+                   id="size"
                    class="form-control"
-                   ng-model="model.widget.url"
-                   placeholder="http://www.google.com">
-        </div>
-        <div class="form-group">
-            <label for="target">Target</label>
-            <select ng-model="model.widget.target"
-                    name="target" id="target"
-                    class="form-control">
-                <option value="_blank">_blank</option>
-                <option value="_self">_self</option>
-                <option value="_parent">_parent</option>
-                <option value="_top">_top</option>
-            </select>
+                   ng-model="model.widget.size"
+                   min="1" max="6" step="1">
         </div>
     </form>
     <a ng-click="model.deleteWidget()" class="btn btn-danger btn-block">Delete</a>

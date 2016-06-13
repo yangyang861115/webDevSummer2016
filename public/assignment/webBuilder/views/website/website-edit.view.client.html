@@ -36,13 +36,16 @@
         {{model.alert}}
     </div>
 
-    <form>
+    <form name="webEditForm" novalidate class="css-form">
         <div class="from-group">
             <label for="website-name">Application Name</label>
-            <input type="text"
+            <input type="text" name="name"
                    class="form-control"
                    id="website-name"
-                   ng-model="model.website.name">
+                   ng-model="model.website.name" required>
+        </div>
+        <div ng-show="webEditForm.name.$touched">
+            <div class="errormsg" ng-show="webEditForm.name.$error.required">Name is required</div>
         </div>
         <div class="from-group">
             <label for="website-description">Application Description</label>

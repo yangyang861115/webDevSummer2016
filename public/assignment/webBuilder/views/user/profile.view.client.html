@@ -39,14 +39,6 @@
                    ng-model="model.user.username">
         </div>
         <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email"
-                   id="email"
-                   class="form-control"
-                   placeholder="alice@wonderland.com"
-                   ng-model="model.user.email">
-        </div>
-        <div class="form-group">
             <label for="first-name">First Name</label>
             <input type="text"
                    id="first-name"
@@ -61,6 +53,29 @@
                    class="form-control"
                    placeholder="Wonderland"
                    ng-model="model.user.lastName">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email"
+                   id="email"
+                   class="form-control"
+                   placeholder="alice@wonderland.com"
+                   ng-model="model.user.email">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text"
+                   id="phone"
+                   class="form-control"
+                   placeholder="(111)111-1111"
+                   ng-model="model.user.phone">
+        </div>
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date"
+                   id="date"
+                   class="form-control"
+                   ng-model="model.user.dob">
         </div>
     </form>
     <a href="#/user/{{model.userId}}/website" class="btn btn-info btn-block">Websites</a>

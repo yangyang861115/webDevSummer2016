@@ -39,7 +39,22 @@
 
     <div ng-switch="model.widget.type">
         <div ng-switch-when="HEADER">
-            <ng-include src="'views/widget/widgets/widget-heading.view.client.html'">
+            <ng-include src="'views/widget/widgets/widget-header.view.client.html'">
+        </div>
+        <div ng-switch-when="LABEL">
+            <ng-include src="'views/widget/widgets/widget-label.view.client.html'">
+        </div>
+        <div ng-switch-when="HTML">
+            <ng-include src="'views/widget/widgets/widget-html.view.client.html'">
+        </div>
+        <div ng-switch-when="TEXT">
+            <ng-include src="'views/widget/widgets/widget-text.view.client.html'">
+        </div>
+        <div ng-switch-when="LINK">
+            <ng-include src="'views/widget/widgets/widget-link.view.client.html'">
+        </div>
+        <div ng-switch-when="BUTTON">
+            <ng-include src="'views/widget/widgets/widget-button.view.client.html'">
         </div>
         <div ng-switch-when="IMAGE">
             <ng-include src="'views/widget/widgets/widget-image.view.client.html'">
@@ -47,29 +62,12 @@
         <div ng-switch-when="YOUTUBE">
             <ng-include src="'views/widget/widgets/widget-youtube.view.client.html'">
         </div>
-        <div ng-switch-when="LABEL">
-            LABEL
-        </div>
-        <div ng-switch-when="BUTTON">
-            BUTTON
-        </div>
         <div ng-switch-when="DATATABLE">
-            DATATABLE
+            <ng-include src="'views/widget/widgets/widget-datatable.view.client.html'">
         </div>
         <div ng-switch-when="REPEATER">
-            REPEATER
+            <ng-include src="'views/widget/widgets/widget-repeater.view.client.html'">
         </div>
-        <div ng-switch-when="LINK">
-            LINK
-        </div>
-        <div ng-switch-when="HTML">
-            HTML
-        </div>
-        <div ng-switch-when="TEXT">
-            TEXT
-        </div>
-
-
     </div>
 
 </div>

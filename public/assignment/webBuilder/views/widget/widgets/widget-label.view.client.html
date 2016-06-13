@@ -1,0 +1,23 @@
+<div>
+    <h1>Label</h1>
+    <form name="widgetNewForm" novalidate class="css-form">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name"
+                   id="name"
+                   class="form-control"
+                   ng-model="model.widget.name" required>
+        </div>
+        <div ng-show="widgetNewForm.name.$touched">
+            <div class="errormsg" ng-show="widgetNewForm.name.$error.required">Name is required</div>
+        </div>
+        <div class="form-group">
+            <label for="text">Text</label>
+            <input type="text"
+                   id="text"
+                   class="form-control"
+                   ng-model="model.widget.text">
+        </div>
+    </form>
+    <a ng-click="model.deleteWidget()" class="btn btn-danger btn-block">Delete</a>
+</div>

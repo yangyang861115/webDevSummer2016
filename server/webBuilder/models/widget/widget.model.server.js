@@ -12,7 +12,8 @@ module.exports = function () {
         findWidgetById: findWidgetById,
         updateWidget: updateWidget,
         deleteWidget: deleteWidget,
-        reorderWidget: reorderWidget
+        reorderWidget: reorderWidget,
+        uploadImage: uploadImage
     };
 
     function createWidget(pageId, widget) {
@@ -40,7 +41,22 @@ module.exports = function () {
     }
 
     function reorderWidget(pageId, start, end){
+        //Modifies the order of widget at position start into final position end in page whose _id is pageId
+        return Widget.find({_page: pageId})
+            .then(function(widgets){
+                widgets.splice(end, 0, widgets.splice(start, 1)[0]);
+                widgets.save();
+            });
+    }
 
+    function uploadImage(widgetId, url, width) {
+        return Widget.update(
+            {_id: widgetId},
+            {$set: {
+                url: url,
+                width: width
+            }}
+        );
     }
     return api;
 };

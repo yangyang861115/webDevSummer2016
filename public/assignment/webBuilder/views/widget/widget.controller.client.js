@@ -15,6 +15,7 @@
         vm.pageId = $routeParams.pid;
         vm.getSafeHtml = getSafeHtml;
         vm.getSafeUrl = getSafeUrl;
+        vm.reorderWidget = reorderWidget;
 
         function init() {
             WidgetService
@@ -42,6 +43,18 @@
             var id = urlParts[urlParts.length - 1];
             var newUrl = "https://www.youtube.com/embed/" + id;
             return $sce.trustAsResourceUrl(newUrl);
+        }
+
+        function reorderWidget(start, end) {
+            return WidgetService.reorderWidget(vm.pageId, start, end)
+                .then(
+                    function (response) {
+                       init();
+                    },
+                    function (error) {
+                        vm.alert = "Cannot move the widget";
+                    }
+                );
         }
     }
 
@@ -100,17 +113,19 @@
         init();
 
         function updateWidget() {
-            WidgetService
-                .updateWidget(vm.widgetId, vm.widget)
-                .then(
-                    function (response) {
-                        vm.success = "update successfully";
-                        $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget");
-                    },
-                    function (error) {
-                        vm.alert = error.data;
-                    }
-                );
+            if(vm.widget && vm.widget.name) {
+                WidgetService
+                    .updateWidget(vm.widgetId, vm.widget)
+                    .then(
+                        function (response) {
+                            vm.success = "update successfully";
+                            $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget");
+                        },
+                        function (error) {
+                            vm.alert = error.data;
+                        }
+                    );
+            }
         }
 
         function deleteWidget() {

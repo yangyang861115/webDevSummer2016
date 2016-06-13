@@ -39,21 +39,22 @@
         vm.createWebsite = createWebsite;
 
         function createWebsite() {
-            WebsiteService
-                .createWebsite(vm.userId, vm.website)
-                .then(
-                    function (response) {
-                        var website = response.data;
-                        if (website) {
-                            $location.url("/user/" + vm.userId + "/website/");
+            if (vm.website && vm.website.name) {
+                WebsiteService
+                    .createWebsite(vm.userId, vm.website)
+                    .then(
+                        function (response) {
+                            var website = response.data;
+                            if (website) {
+                                $location.url("/user/" + vm.userId + "/website/");
+                            }
+                        },
+                        function (error) {
+                            vm.alert = "unable to create website";
                         }
-                    },
-                    function (error) {
-                        vm.alert = "unable to create website";
-                    }
-                );
+                    );
+            }
         }
-
     }
 
     function EditWebsiteController($routeParams, WebsiteService, $location) {
@@ -80,16 +81,18 @@
         init();
 
         function updateWebsite(website) {
-            WebsiteService
-                .updateWebsite(vm.websiteId, website)
-                .then(
-                    function (response) {
-                        vm.success = "Update successfully!";
-                    },
-                    function (error) {
-                        vm.alert = error.data;
-                    }
-                );
+            if (website && website.name) {
+                WebsiteService
+                    .updateWebsite(vm.websiteId, website)
+                    .then(
+                        function (response) {
+                            vm.success = "Update successfully!";
+                        },
+                        function (error) {
+                            vm.alert = error.data;
+                        }
+                    );
+            }
         }
 
         function deleteWebsite() {

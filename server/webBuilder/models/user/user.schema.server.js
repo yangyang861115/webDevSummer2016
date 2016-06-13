@@ -4,6 +4,8 @@
 module.exports = function(){
     var mongoose = require('mongoose');
 
+    var WebsiteSchema = require("../website/website.schema.server.js")();
+
     var UserSchema = mongoose.Schema({
         username: {type: String, required: true},
         password: String,
@@ -12,7 +14,7 @@ module.exports = function(){
         email: String,
         phone: String,
         dob: Date,
-        //websites: {type: }
+        websites: [WebsiteSchema],
         dateCreated: {type: Date, default: Date.now}
     }, {collection: "webbuilder.user"});
 

@@ -7,13 +7,13 @@
 
     function todos(){
         function linker(scope, element, attributes){
-            var data = scope.data;
+
             var startIndex = -1;
             var endIndex = -1;
             $(element)
-                .find("tbody")
-                .sortable({
-                    axis: "y",
+                    .find("tbody")
+                    .sortable({
+                        axis: "y",
                     start: function(event, ui){
                         console.log("sorting started");
                         startIndex = ui.item.index();

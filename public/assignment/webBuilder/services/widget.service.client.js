@@ -22,7 +22,7 @@
             findWidgetById: findWidgetById,
             updateWidget: updateWidget,
             deleteWidget: deleteWidget,
-            sortWidgets: sortWidgets
+            reorderWidget: reorderWidget
         };
 
         function createWidget(pageId, widget) {
@@ -45,8 +45,8 @@
             return $http.delete("/api/webbuilder/widget/" + widgetId);
         }
 
-        function sortWidgets(pageId, id1, id2) {
-            return $http.put("/api/webbuilder/page/" + pageId + "/widget?initial=" + id1 + "&final=" + id2);
+        function reorderWidget(pageId, id1, id2) {
+            return $http.put("/api/webbuilder/page/" + pageId + "/widget?start=" + id1 + "&end=" + id2);
         }
         return api;
     }

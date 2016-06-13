@@ -38,19 +38,21 @@
         vm.createPage = createPage;
 
         function createPage(page) {
-            PageService
-                .createPage(vm.websiteId, page)
-                .then(
-                    function (response) {
-                        var page = response.data;
-                        if (page) {
-                            $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/");
+            if (page && page.name) {
+                PageService
+                    .createPage(vm.websiteId, page)
+                    .then(
+                        function (response) {
+                            var page = response.data;
+                            if (page) {
+                                $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/");
+                            }
+                        },
+                        function (error) {
+                            vm.alert = "Unable to create page";
                         }
-                    },
-                    function (error) {
-                        vm.alert = "Unable to create page";
-                    }
-                );
+                    );
+            }
         }
     }
 
@@ -80,16 +82,18 @@
         init();
 
         function updatePage(page) {
-            PageService
-                .updatePage(vm.pageId, page)
-                .then(
-                    function (response) {
-                        vm.success = "update successfully";
-                    },
-                    function (error) {
-                        vm.alert = "Cannot update page with id " + vm.pageId;
-                    }
-                );
+            if (page && page.name) {
+                PageService
+                    .updatePage(vm.pageId, page)
+                    .then(
+                        function (response) {
+                            vm.success = "update successfully";
+                        },
+                        function (error) {
+                            vm.alert = "Cannot update page with id " + vm.pageId;
+                        }
+                    );
+            }
         }
 
         function deletePage() {
