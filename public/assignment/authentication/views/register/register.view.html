@@ -1,0 +1,40 @@
+<h1>register</h1>
+
+<form>
+    <div class="form-group">
+        <label for="username">username</label>
+        <input type="text"
+               class="form-control"
+               id="username"
+               placeholder="username"
+               ng-model="user.username">
+    </div>
+    <div class="form-group">
+        <label for="password">password</label>
+        <input type="password"
+               class="form-control"
+               id="password"
+               placeholder="password"
+               ng-model="user.password">
+    </div>
+    <div class="form-group">
+        <label for="verifypassword">verify password</label>
+        <input type="password"
+               class="form-control"
+               id="verifypassword"
+               placeholder="verify password"
+               ng-model="user.verifypassword">
+    </div>
+    <div class="form-group">
+        <label for="email">email</label>
+        <input type="email"
+               class="form-control"
+               id="email"
+               placeholder="you@somewhere.com"
+               ng-model="user.email">
+    </div>
+    <button ng-click="model.register(user)"
+            class="btn btn-primary btn-block">Register
+    </button>
+</form>
+{{model.errormsg}}

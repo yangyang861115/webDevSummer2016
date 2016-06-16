@@ -15,7 +15,7 @@
         function login(user) {
             if (user && user.username && user.password) {
                 UserService
-                    .findUserByCredentials(user.username, user.password)
+                    .login(user.username, user.password)
                     .then(
                         function (response) {
                             var user = response.data;
@@ -39,7 +39,7 @@
         function register(user) {
             if (user && user.username && user.password && user.confirmPassword && user.password == user.confirmPassword) {
                 UserService
-                    .createUser(user)
+                    .register(user)
                     .then(
                         function (response) {
                             var newUser = response.data;
@@ -48,8 +48,7 @@
                             }
                         },
                         function (error) {
-                            console.log(error.data);
-                            vm.alert = "We're sorry, something went wrong in registration. Please try again";
+                            vm.alert = error.data;
                         }
                     );
             }
@@ -60,6 +59,7 @@
         var vm = this;
         vm.userId = $routeParams.uid;
         vm.updateUser = updateUser;
+        vm.logout = logout;
         vm.deleteUser = deleteUser;
         vm.convertToDate = convertToDate;
 
@@ -89,6 +89,19 @@
                     function (error) {
                         console.log(error.data);
                         vm.alert = "We're sorry, something went wrong in updating. Please try again";
+                    }
+                );
+        }
+
+        function logout(){
+            UserService
+                .logout()
+                .then(
+                    function (response) {
+                        $location.url("/login");
+                    },
+                    function (error) {
+                        $location.url("/login");
                     }
                 );
         }

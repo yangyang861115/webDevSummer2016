@@ -5,6 +5,23 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+var passport      = require('passport');
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+
+var cookieParser  = require('cookie-parser');
+var session       = require('express-session');
+
+app.use(cookieParser());
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    //resave: true,
+    //saveUninitialized: true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 // configure a public directory to host static content
 app.use(express.static(__dirname + '/public'));
 
@@ -25,7 +42,8 @@ mongoose.connect(connectionString);
 require ("./server/test/app.js")(app); //Add or delete message to test mongodb working
 require ("./server/meanBlog/app.js")(app); //MEAN Blog
 require ("./server/webBuilder/app.js")(app); //WebBuilder Blog
-require("./server/todos/todo.js")(app); // Todo
+require("./server/todos/todo.js")(app); // todo
+require("./server/authentication/app.js")(app); //authentication
 
 
 

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Authentication</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <script src="../../js/angular.js"></script>
+    <script src="../../js/angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+    <script src="views/main.controller.js"></script>
+    <script src="views/register/register.controller.js"></script>
+    <script src="views/login/login.controller.js"></script>
+    <script src="views/profile/profile.controller.js"></script>
+    <script src="services/user.service.client.js"></script>
+</head>
+<body ng-controller="MainController as main">
+<div class="container">
+    <ul class="nav nav-pills">
+        <li ng-class="{'active' : main.$location.url()=='/home'}"><a href="#/home">Home</a></li>
+        <li ng-class="{'active' : main.$location.url()=='/login'}"
+            ng-hide="currentUser"><a href="#/login">Login</a></li>
+        <li ng-class="{'active' : main.$location.url()=='/register'}"
+            ng-hide="currentUser"><a href="#/register">Register</a></li>
+        <li ng-class="{'active' : main.$location.url()=='/profile'}"
+            ng-show="currentUser"><a href="#/profile">Profile</a></li>
+        <li ng-click="main.logout()"
+            ng-show="currentUser"><a href="">Log out</a></li>
+        <li ng-click=""
+            ng-show="currentUser && currentUser.roles.indexOf('admin') > -1"><a href="">Admin</a></li>
+    </ul>
+
+    <div ng-view class="col-sm-6 col-sm-offset-3"></div>
+</div>
+</body>
+</html>

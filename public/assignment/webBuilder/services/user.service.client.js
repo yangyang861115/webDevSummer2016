@@ -20,6 +20,10 @@
 
         var api = {
             createUser: createUser,
+            login: login,
+            logout: logout,
+            loggedIn: loggedIn,
+            register: register,
             findUserById: findUserById,
             findUserByUsername: findUserByUsername,
             findUserByCredentials: findUserByCredentials,
@@ -29,6 +33,26 @@
 
         function createUser(user) {
             return $http.post("/api/webbuilder/user", user);
+        }
+
+        function login(username, password) {
+            var user = {
+                username: username,
+                password: password
+            };
+            return $http.post("/api/webbuilder/login", user);
+        }
+
+        function logout(){
+            return $http.post("/api/webbuilder/logout");
+        }
+
+        function loggedIn(){
+            return $http.get("/api/webbuilder/loggedIn");
+        }
+
+        function register(user){
+            return $http.post("/api/webbuilder/register", user);
         }
 
         function findUserById(userId) {
