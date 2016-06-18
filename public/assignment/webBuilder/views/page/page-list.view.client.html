@@ -19,11 +19,11 @@
         </div>
     </div>
 </nav>
-<div class="container">
+<div class="col-sm-6 col-sm-offset-3">
     <ul class="list-group" >
         <li class="list-group-item" ng-repeat="page in model.pages">
             <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}/widget">
-                {{page.title}}
+                {{page.name}}
             </a>
             <div class="pull-right">
                 <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}">
