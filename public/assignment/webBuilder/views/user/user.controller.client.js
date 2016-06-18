@@ -26,7 +26,8 @@
                                 vm.alert = "We're sorry, but you used a username and/or password that doesn't match our records. Please try again";
                             }
                         }, function (error) {
-                            console.log(error.data);
+                            vm.alert = "We're sorry, but you used a username and/or password that doesn't match our records. " +
+                                "Please try again";
                         });
             }
         }
