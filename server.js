@@ -5,17 +5,15 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-var passport      = require('passport');
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-
 var cookieParser  = require('cookie-parser');
 var session       = require('express-session');
+var passport      = require('passport');
 
 app.use(cookieParser());
 app.use(session({
     secret: process.env.SESSION_SECRET,
-    //resave: true,
-    //saveUninitialized: true
+    resave: true,
+    saveUninitialized: true
 }));
 
 app.use(passport.initialize());

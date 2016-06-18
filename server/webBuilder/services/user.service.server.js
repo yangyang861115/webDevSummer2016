@@ -3,12 +3,20 @@
  */
 
 var passport = require('passport');
+var FacebookStrategy = require('passport-facebook').Strategy;
 var LocalStrategy = require('passport-local').Strategy;
-
+var bcrypt = require("bcrypt-nodejs");
 
 module.exports = function (app, models) {
 
     var UserModel = models.UserModel;
+
+    app.get('/auth/webbuilder/facebook', passport.authenticate('facebook', {scope: 'email'}));
+    app.get('/auth/webbuilder/facebook/callback',
+        passport.authenticate('facebook', {
+            successRedirect: '/assignment/webBuilder/#/user',
+            failureRedirect: '/assignment/webBuilder/#/login'
+        }));
 
     app.post('/api/webbuilder/user', createUser);
 
@@ -24,7 +32,7 @@ module.exports = function (app, models) {
     app.put('/api/webbuilder/user/:userId', updateUser);
     app.delete('/api/webbuilder/user/:userId', deleteUser);
 
-    passport.use('local', new LocalStrategy(localStrategy));
+
     passport.serializeUser(serializeUser);
     passport.deserializeUser(deserializeUser);
 
@@ -45,13 +53,13 @@ module.exports = function (app, models) {
             );
     }
 
-
+    passport.use('local', new LocalStrategy(localStrategy));
     function localStrategy(username, password, done) {
         UserModel
-            .findUserByCredentials(username, password)
+            .findUserByUsername(username)
             .then(
                 function (user) {
-                    if (user.username === username && user.password === password) {
+                    if (user && bcrypt.compareSync(password, user.password)) {
                         return done(null, user);
                     } else {
                         return done(null, false);
@@ -64,6 +72,47 @@ module.exports = function (app, models) {
                 }
             );
     }
+
+    var facebookConfig = {
+        clientID: process.env.FACEBOOK_CLIENT_ID,
+        clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
+        callbackURL: process.env.FACEBOOK_CALLBACK_URL
+    };
+    console.log(facebookConfig.callbackURL);
+    passport.use('facebook', new FacebookStrategy(facebookConfig, facebookStrategy));
+
+    function facebookStrategy(token, refreshToken, profile, done) {
+        console.log(profile);
+        var id = profile.id;
+
+        UserModel.findUserByFacebookId(profile.id)
+            .then(
+                function (fbuser) {
+                    if (fbuser) {
+                        return done(null, fbuser);
+                    } else {
+                        var FBUser = {
+                            username: profile.displayName.replace(/ /g, ''),
+                            token: token,
+                            facebook: {
+                                id: profile.id,
+                                displayName: profile.displayName
+                            }
+                        };
+                        UserModel.createUser(FBUser)
+                            .then(
+                                function (user) {
+                                    done(null, user);
+                                }
+                            );
+                    }
+                },
+                function (error) {
+                    return done(null, false);
+                }
+            );
+    }
+
 
     function login(req, res) {
         var user = req.user; //passport add that to the req
@@ -81,7 +130,6 @@ module.exports = function (app, models) {
         } else {
             res.send('0');
         }
-        ;
     }
 
     function register(req, res) {
@@ -96,6 +144,7 @@ module.exports = function (app, models) {
                         return;
                     } else {
                         //create a user return a promise
+                        req.body.password = bcrypt.hashSync(req.body.password);
                         return UserModel.createUser(req.body);
                     }
                 },
@@ -104,21 +153,21 @@ module.exports = function (app, models) {
                     return;
                 }
             ).then(
-                function (user) {
-                    if(user) {
-                        //passport
-                        req.login(user, function(err){
-                            if(err) {
-                                res.statusCode(400).send(err);
-                            }else {
-                                res.json(user);
-                            }
-                        });
-                    }
-                },
-                function (err) {
+            function (user) {
+                if (user) {
+                    //passport
+                    req.login(user, function (err) {
+                        if (err) {
+                            res.status(400).send(err);
+                        } else {
+                            res.json(user);
+                        }
+                    });
                 }
-            );
+            },
+            function (err) {
+            }
+        );
     }
 
     function createUser(req, res) {

@@ -8,7 +8,7 @@
         .controller("RegisterController", RegisterController)
         .controller("ProfileController", ProfileController);
 
-    function LoginController($location, UserService) {
+    function LoginController($location, $rootScope, UserService) {
         var vm = this;
         vm.login = login;
 
@@ -20,8 +20,8 @@
                         function (response) {
                             var user = response.data;
                             if (user) {
-                                var id = user._id;
-                                $location.url("/user/" + id);
+                                $rootScope.currentUser = user;
+                                $location.url("/user");
                             } else {
                                 vm.alert = "We're sorry, but you used a username and/or password that doesn't match our records. Please try again";
                             }
@@ -32,7 +32,7 @@
         }
     }
 
-    function RegisterController($location, UserService) {
+    function RegisterController($location, UserService, $rootScope) {
         var vm = this;
         vm.register = register;
 
@@ -44,7 +44,8 @@
                         function (response) {
                             var newUser = response.data;
                             if (newUser) {
-                                $location.url("/user/" + newUser._id);
+                                $rootScope.currentUser = user;
+                                $location.url("/user");
                             }
                         },
                         function (error) {
@@ -55,9 +56,9 @@
         }
     }
 
-    function ProfileController($routeParams, $location, UserService) {
+    function ProfileController($routeParams, $location, $rootScope, UserService) {
         var vm = this;
-        vm.userId = $routeParams.uid;
+        vm.userId = $rootScope.currentUser._id;
         vm.updateUser = updateUser;
         vm.logout = logout;
         vm.deleteUser = deleteUser;
@@ -68,6 +69,7 @@
                 .findUserById(vm.userId)
                 .then(
                     function (response) {
+                        response.data.dob = new Date(response.data.dob);
                         vm.user = response.data;
                     },
                     function (error) {
@@ -93,14 +95,16 @@
                 );
         }
 
-        function logout(){
+        function logout() {
             UserService
                 .logout()
                 .then(
                     function (response) {
+                        $rootScope.currentUser = null;
                         $location.url("/login");
                     },
                     function (error) {
+                        $rootScope.currentUser = null;
                         $location.url("/login");
                     }
                 );
@@ -119,7 +123,7 @@
                 )
         }
 
-        function convertToDate(dateString){
+        function convertToDate(dateString) {
             return new Date(dateString);
         }
     }

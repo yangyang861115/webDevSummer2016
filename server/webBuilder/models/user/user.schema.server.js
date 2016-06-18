@@ -1,7 +1,7 @@
 /**
  * Created by yangyang on 6/9/16.
  */
-module.exports = function(){
+module.exports = function () {
     var mongoose = require('mongoose');
 
     var WebsiteSchema = require("../website/website.schema.server.js")();
@@ -14,6 +14,14 @@ module.exports = function(){
         email: String,
         phone: String,
         dob: Date,
+        facebook: {
+            token: String,
+            id: String,
+            displayName: String
+        },
+        google: {
+            id: String,
+        },
         websites: [WebsiteSchema],
         dateCreated: {type: Date, default: Date.now}
     }, {collection: "webbuilder.user"});
