@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>People</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <style>
+        body {
+            background: #fafafa;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #333;
+        }
+
+        input {
+            border: 1px solid #999;
+            border-radius: 4px;
+            padding: 10px;
+        }
+        button {
+            zoom: 1.5;
+            background-color: #999;
+            border: 1px solid #999;
+            border-radius: 4px;
+            padding: 1px 5px;
+
+        }
+
+        button.active {
+            background-color:rgb(165, 227, 158);
+        }
+        #peopleModule, #statsModule{
+            text-align: center;
+        }
+        #peopleModule ul {
+            padding: 0;
+        }
+        #peopleModule li {
+            display: inline-block;
+            list-style-type: none;
+            background: #98ec9b;
+            border-radius: 5px;
+            padding: 3px 8px;
+            margin: 5px 0;
+            width: 200px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        #peopleModule li:hover {
+            opacity: 1;
+        }
+        #peopleModule li span {
+            display: inline-block;
+            width: 160px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        #peopleModule li i {
+            cursor: pointer;
+            font-weight: bold;
+            float: right;
+            font-style: normal;
+            background: #666;
+            padding: 2px 4px;
+            font-size: 60%;
+            color: white;
+            border-radius: 20px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+            margin-top: 3px;
+        }
+
+        #peopleModule li i:hover {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center">Use Pubsub to communicate between different modules</h1>
+    <hr>
+    <div id="statsModule">
+        <h2>Stats Module</h2>
+        <div id="peopleNumber">
+            <template id="stats-template">
+                <span>{{people}}</span>
+            </template>
+        </div>
+    </div>
+    <hr>
+    <div id="peopleModule">
+        <h2>People Module</h2>
+        <input type="text" placeholder="name">
+        <button id="addPerson">Add Person</button>
+        <ul id="people">
+            <template id="people-template">
+                {{#people}}
+                <li>
+                    <span>{{.}}</span>
+                    <i class="del">X</i>
+                </li>
+                {{/people}}
+            </template>
+        </ul>
+    </div>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="../../js/mustache.js"></script>
+<script src="events.js"></script>
+<script src="stat.js"></script>
+<script src="people.js"></script>
+</body>
+</html>
