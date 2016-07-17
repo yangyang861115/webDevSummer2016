@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>JQuery</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <style>
+        .tab-panels ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .tab-panels ul li {
+            list-style-type: none;
+            display: inline-block;
+            background: #999;
+            margin: 0;
+            padding: 3px 10px;
+            border-radius: 10px 10px 0 0;
+            color: #fff;
+            font-weight: 200;
+            cursor: pointer;
+        }
+
+        .tab-panels ul li:hover {
+            color: #fff;
+            background: #666;
+        }
+
+        .tab-panels ul li.active {
+            color: #fff;
+            background: #666;
+        }
+
+        .tab-panels .panel {
+            display: none;
+            background: #c9c9c9;
+            padding: 30px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .tab-panels .panel.active {
+            display: block;
+        }
+
+        #slider {
+            width: 720px;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        #slider .slides {
+            display: block;
+            width: 6000px;
+            height: 400px;
+            margin: 0;
+            padding: 0;
+        }
+
+        #slider .slide {
+            float: left;
+            list-style-type: none;
+            width: 720px;
+            height: 400px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <h1>Let's have fun!</h1>
+        <button id="btn1" class="panel-button" data-panelid="panel1">#btn1</button>
+        <button id="btn2" class="panel-button" data-panelid="panel2">#btn2</button>
+        <button id="btn3" class="panel-button" data-panelid="panel3">#btn3</button>
+        <button id="btn4" class="panel-button" data-panelid="panel4">#btn4</button>
+
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3">
+            <div id="panel1" class="panel panel-primary">
+                <div class="panel-heading">#panel1</div>
+                <div class="panel-body">content</div>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div id="panel2" class="panel panel-primary">
+                <div class="panel-heading">#panel2</div>
+                <div class="panel-body">content</div>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div id="panel3" class="panel panel-primary">
+                <div class="panel-heading">#panel3</div>
+                <div class="panel-body">content</div>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div id="panel4" class="panel panel-primary">
+                <div class="panel-heading">#panel4</div>
+                <div class="panel-body">content</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-panels">
+        <ul class="tabs">
+            <li rel="mypanel1" class="active">panel1</li>
+            <li rel="mypanel2">panel2</li>
+            <li rel="mypanel3">panel3</li>
+            <li rel="mypanel4">panel4</li>
+        </ul>
+        <div id="mypanel1" class="panel active">
+            content1<br>
+            content1<br>
+            content1<br>
+            content1<br>
+            content1<br>
+        </div>
+        <div id="mypanel2" class="panel">
+            content2<br>
+            content2<br>
+            content2<br>
+            content2<br>
+            content2<br>
+        </div>
+        <div id="mypanel3" class="panel">
+            content3<br>
+            content3<br>
+            content3<br>
+            content3<br>
+            content3<br>
+        </div>
+        <div id="mypanel4" class="panel">
+            content4<br>
+            content4<br>
+            content4<br>
+            content4<br>
+            content4<br>
+        </div>
+
+    </div>
+
+    <div id="slider">
+        <ul class="slides">
+            <li class="slide"><img
+                    src="https://tse1.mm.bing.net/th?&id=OIP.Mac10efbc9d45571d4532d99c8f05da1aH0&w=299&h=275&c=0&pid=1.9&rs=0&p=0&r=0"
+                    alt=""></li>
+            <li class="slide"><img
+                    src="https://tse1.mm.bing.net/th?&id=OIP.M6c673aedfe4ddff19dc656acc075552eH0&w=214&h=300&c=0&pid=1.9&rs=0&p=0&r=0"
+                    alt=""></li>
+            <li class="slide"><img
+                    src="https://tse1.mm.bing.net/th?&id=OIP.M31ad1ffd9dd60dbcf811f6f0a13bcb3dH0&w=299&h=288&c=0&pid=1.9&rs=0&p=0&r=0"
+                    alt=""></li>
+        </ul>
+    </div>
+
+    <div class="list">
+        <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+            <li>
+                <ul class="sublist">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+//        $('#panel1').hide(300).show(1000);
+//        $('#panel2').slideUp(1000).delay(1000).slideDown(1000);
+//        $('#panel3').fadeOut(1000).delay(1000).fadeIn(1000).slideToggle(1000).slideToggle(1000);
+//        $('#panel4').css({color: 'red', fontWeight: 'bold'});
+
+
+//        $('#btn1').on('click', function() {
+//            $('#panel1').slideToggle(200);
+//        })
+        var content = "New content";
+        $('.panel-button').on('click', function () {
+            var panelId = $(this).attr('data-panelid');
+            $('#' + panelId).toggle(200);
+            $('#' + panelId + ' .panel-body').html(content);
+        })
+
+
+        $('.tab-panels .tabs li').on('click', function () {
+            //faster and scalable
+            var $panel = $(this).closest('.tab-panels');
+
+            var panelToShow = $(this).attr('rel');
+
+            $panel.find('.tabs li.active').removeClass('active');
+            $(this).addClass('active');
+
+            $panel.find('.panel.active').slideUp(300, showNextPanel);
+
+            function showNextPanel() {
+                $(this).removeClass('active');
+
+                $('#' + panelToShow).slideDown(1000, function () {
+                    $(this).addClass('active');
+                });
+            }
+
+        });
+
+        var width = 720;
+        var animationSpeed = 1000;
+        var pause = 1000;
+        var currentSlide = 1;
+
+        var interval;
+
+        var $slider = $('#slider');
+        var $sliderContainer = $slider.find('.slides');
+        var $slides = $sliderContainer.find('.slide');
+
+        function startSlider() {
+            interval = setInterval(function () {
+                $sliderContainer.animate({'margin-left': '-=' + width}, animationSpeed, function () {
+                    currentSlide++;
+                    if (currentSlide === $slides.length) {
+                        currentSlide = 1;
+                        $sliderContainer.css({"margin-left": 0});
+                    }
+                });
+            }, pause);
+        }
+
+        function pauseSlider() {
+            clearInterval(interval);
+        }
+
+
+        $slider.on('mouseenter', pauseSlider).on('mouseleave', startSlider);
+        startSlider();
+
+
+    });
+</script>
+</body>
+</html>

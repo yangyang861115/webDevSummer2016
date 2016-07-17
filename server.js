@@ -42,6 +42,7 @@ require ("./server/meanBlog/app.js")(app); //MEAN Blog
 require ("./server/webBuilder/app.js")(app); //WebBuilder Blog
 require("./server/todos/todo.js")(app); // todo
 require("./server/authentication/app.js")(app); //authentication
+require("./server/coffee/app.js")(app); //coffee
 
 
 

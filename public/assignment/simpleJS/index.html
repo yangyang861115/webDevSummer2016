@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/font-awesome.min.css">
+    <style>
+        img {
+            width: 200px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        li input {
+            display: none;
+        }
+
+        li.edit span {
+            display: none;
+        }
+
+        li.edit input {
+            display: initial;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <h1 class="text-center">Javascript Events</h1>
+</header>
+<main class="container">
+    <div class="text-center">
+        <h4>Add Numbers:</h4>
+        <p>
+            <input type="text" id="num-one">  + <input type="text" id="num-two">
+        </p>
+        <p id="add-sum"></p>
+    </div>
+
+
+    <div style="margin-left: 40%;margin-top:80px">
+        <h4>Pictures</h4>
+        <ul>
+            <li><a data-img="apple-pic" id="apple" href="#">Apple</a></li>
+            <li><a data-img="pear-pic" id="pear" href="#">Pear</a></li>
+            <li><a data-img="orange-pic" id="orange" href="#">Orange</a></li>
+        </ul>
+        <img class="hide" id="apple-pic" src="https://tse1.mm.bing.net/th?&id=OIP.Mac10efbc9d45571d4532d99c8f05da1aH0&w=299&h=275&c=0&pid=1.9&rs=0&p=0&r=0">
+        <img class="hide" id="pear-pic" src="https://tse1.mm.bing.net/th?&id=OIP.M6c673aedfe4ddff19dc656acc075552eH0&w=214&h=300&c=0&pid=1.9&rs=0&p=0&r=0">
+        <img class="hide" id="orange-pic" src="https://tse1.mm.bing.net/th?&id=OIP.M31ad1ffd9dd60dbcf811f6f0a13bcb3dH0&w=299&h=288&c=0&pid=1.9&rs=0&p=0&r=0">
+    </div>
+
+    <div style="margin-left: 40%;margin-top:80px">
+        <h4>Editable Todo Lists</h4>
+        <ul id="checklist">
+            <li>
+                <span>Apples</span>
+                <input type="text" value="Apples">
+            </li>
+            <li>
+                <span>Oranges</span>
+                <input type="text" value="Oranges">
+            </li>
+            <li>
+                <span>Bananas</span>
+                <input type="text" value="Bananas">
+            </li>
+        </ul>
+    </div>
+
+</main>
+<script src="script1.js"></script>
+</body>
+</html>
