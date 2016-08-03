@@ -36,6 +36,37 @@ h4 {
     background-size: cover;
 }
 
+/*top navigation*/
+.main_navigation {
+    display: inline-block;
+    vertical-align: top;
+}
+.link_buttons {
+    display: block;
+    position: fixed;
+    right: 40px;
+    z-index: 10000;
+    top: 0px;
+}
+
+.link_buttons .nav-button{
+    background: #F58B7D;
+    color: #fff;
+    display: inline-block;
+    font-family: ProximaNova-Extrabld, tahoma, verdana, arial, sans-serif;
+    padding: 15.5px;
+    margin: 0px 0px 0px 10px;
+    text-decoration: none;
+    line-height: 100%;
+    height: 45px;
+    vertical-align: top;
+}
+
+.link_buttons .nav-button:hover {
+    color: #FFF !important;
+    opacity: .7;
+}
+
 .about_me {
     /*background:#000;*/
     color: #aaa;
@@ -51,6 +82,7 @@ h4 {
         padding-top: 2%;
         text-align: left;
     }
+
 }
 
 img.avatar {
@@ -62,6 +94,24 @@ img.avatar {
     left: -114px;
     top: 86px;
 }
+
+
+
+@media screen and (min-width: 769px) and (max-width: 1160px) {
+    img.avatar {
+        border-radius: 100%;
+        width: 200px;
+        position: relative;
+        left: -114px;
+        top: 86px;
+    }
+    div.about-me-info{
+        margin-left:40px;
+        margin-top: 60px;
+        padding-left: 120px;
+    }
+}
+/**
 @-webkit-keyframes mysize {
     0% {
         width: 200px;
@@ -94,11 +144,12 @@ img.avatar:hover {
     -webkit-animation-duration: 3s;
     -webkit-animation-timing-function: ease;
 }
+*/
 
-div.secret {
-    position: absolute;
-    top:80px;
-    left:80px;
+
+div.about-me-info{
+    margin-left:40px;
+    margin-top: 60px;
 }
 
 
@@ -106,11 +157,8 @@ img.icon {
     width: 60px;
     height: 60px;
     border-radius: 20%;
-    -webkit-transform: rotate(0deg);
     -webkit-transition: -webkit-transform 1s linear;
-    -moz-transform: rotate(0deg);
     -moz-transition: -moz-transform 1s linear;
-    -o-transform: rotate(0deg);
     -o-transition: -o-transform 1s linear;
 }
 
@@ -126,10 +174,12 @@ img.icon:hover {
         padding: 0;
     }
 
-    .about_me img.avatar {
-
-        margin-top: 60px;
-        width: 50%;
+    img.avatar {
+        border-radius: 100%;
+        width: 200px;
+        position: relative;
+        left: -114px;
+        top: 85px;
     }
 
     .icon {
@@ -520,8 +570,10 @@ div#envlope-icon {
 @keyframes animate_ring_code {
     0% {
         transform: rotate(0deg);
+        transform-origin: 46% 47%;
     }
     100% {
         transform: rotate(360deg);
+        transform-origin: 46% 47%;
     }
 }
