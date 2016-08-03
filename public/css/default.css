@@ -58,6 +58,9 @@ img.avatar {
     -webkit-filter: grayscale(0);
     filter: grayscale(0);
     width: 200px;
+    position: relative;
+    left: -114px;
+    top: 86px;
 }
 @-webkit-keyframes mysize {
     0% {
@@ -97,6 +100,7 @@ div.secret {
     top:80px;
     left:80px;
 }
+
 
 img.icon {
     width: 60px;
@@ -477,4 +481,47 @@ div#envlope-icon {
 .middle_parallax{
     width: 100%;
     height: 560px;
+}
+
+@media screen and (max-width: 1980px){
+    #future_links {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        height: 400px;
+        width: 400px;
+        top: 0px;
+    }
+}
+
+#future_links {
+    position: relative;
+    overflow: visible;
+    flex: none;
+    height: 400px;
+    width: 400px;
+    text-align: right;
+
+}
+#future_links .radial {
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.radial#radial_ring_code {
+    background-image: url('../images/clock/circle.png') !important;
+    animation: animate_ring_code 30s, fade_in 1s;
+    -webkit-animation: animate_ring_code 30s, fade_in 1s;
+}
+
+@keyframes animate_ring_code {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
