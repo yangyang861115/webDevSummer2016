@@ -45,7 +45,7 @@ h4 {
     display: block;
     position: fixed;
     right: 40px;
-    z-index: 10000;
+    z-index: 2;
     top: 0px;
 }
 
@@ -67,6 +67,28 @@ h4 {
     opacity: .7;
 }
 
+@media screen and (max-width: 991px) {
+    .link_buttons {
+        display: block;
+        position: fixed;
+        right: 0px;
+        z-index: 2;
+        top: 0px;
+    }
+    .link_buttons .nav-button{
+        background: #F58B7D;
+        color: #fff;
+        display: inline-block;
+        font-family: ProximaNova-Extrabld, tahoma, verdana, arial, sans-serif;
+        padding: 5.5px;
+        margin: 0px 0px 0px 5px;
+        text-decoration: none;
+        line-height: 100%;
+        height: 25px;
+        vertical-align: top;
+    }
+}
+
 .about_me {
     /*background:#000;*/
     color: #aaa;
@@ -82,7 +104,6 @@ h4 {
         padding-top: 2%;
         text-align: left;
     }
-
 }
 
 img.avatar {
