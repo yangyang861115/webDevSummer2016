@@ -372,8 +372,11 @@ table th {
 .project:hover .project-hover-text {
     width: 93%;
     height: 100%;
+    padding-top: 10%;
+    padding-left: 5%;
+    color:white;
+    font-weight: bold;
     display: block;
-    padding-top: 40%;
 }
 
 .project-desc {
