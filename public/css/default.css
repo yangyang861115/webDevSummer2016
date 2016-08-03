@@ -390,7 +390,7 @@ table th {
     overflow: hidden;
     display: block;
     position: absolute;
-    z-index: 999;
+    z-index: 1;
 }
 
 .down_triangle_container .triangle_container {
@@ -547,7 +547,7 @@ table th {
 
 div#envlope-icon {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     left: 49%;
     top: 55%;
 }
