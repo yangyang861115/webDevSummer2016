@@ -99,7 +99,7 @@ h4 {
     text-align: center;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
     .about_me .about_me_info {
         padding-top: 2%;
         text-align: left;
@@ -118,7 +118,7 @@ img.avatar {
 
 
 
-@media screen and (min-width: 769px) and (max-width: 1160px) {
+@media screen and (min-width: 767px) and (max-width: 1160px) {
     img.avatar {
         border-radius: 100%;
         width: 200px;
