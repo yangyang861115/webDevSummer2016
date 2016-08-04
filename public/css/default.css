@@ -586,7 +586,7 @@ div#envlope-icon {
 }
 
 .radial#radial_ring_code {
-    background-image: url('../images/clock/circle.png') !important;
+    background-image: url('../images/clock/circle-signature.png') !important;
     animation: animate_ring_code 30s, fade_in 1s;
     -webkit-animation: animate_ring_code 30s, fade_in 1s;
 }
