@@ -601,3 +601,24 @@ div#envlope-icon {
         transform-origin: 46% 47%;
     }
 }
+
+/*code*/
+div#code p {
+    font-family: 'Source Code Pro', sans-serif;
+    line-height: 15px;
+    color: white;
+}
+
+div#code {
+    margin: 30px 5px;
+    padding-left: 10%;
+    font-size: larger;
+}
+
+@media screen and (max-width: 888px) {
+    div#code {
+        margin: 10px 0;
+        padding: 0;
+        font-size: 13px;
+    }
+}
