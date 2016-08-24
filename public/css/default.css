@@ -583,6 +583,7 @@ div#envlope-icon {
     width: inherit;
     background-repeat: no-repeat;
     background-size: contain;
+    overflow: hidden;
 }
 
 .radial#radial_ring_code {
